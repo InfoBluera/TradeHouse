@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" rx="20" fill="#0B0C0E"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#FFE19C" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#E5B869" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#E5B869" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="45" r="30" fill="url(#glow)"/>
+  <!-- Minimal Architectural Luminaire Silhouette -->
+  <line x1="50" y1="10" x2="50" y2="35" stroke="#E5B869" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 30 50 Q 50 35 70 50 L 65 54 Q 50 42 35 54 Z" fill="#F7F5F0"/>
+  <circle cx="50" cy="46" r="3" fill="#FFE19C"/>
+  <path d="M 40 78 L 50 88 L 60 78" stroke="#E5B869" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <text x="50" y="72" font-family="'Cormorant Garamond', Georgia, serif" font-size="12" fill="#F7F5F0" font-weight="600" text-anchor="middle" letter-spacing="2">TRADE</text>
+</svg>
