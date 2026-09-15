@@ -18,7 +18,7 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 import HeroLightAnimation from '../components/HeroLightAnimation';
-import SmartSceneSimulator from '../components/SmartSceneSimulator';
+import LightingSimulator from '../components/LightingSimulator';
 import SpaceExplorer from '../components/SpaceExplorer';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import { SERVICES, PROJECTS, PROCESS_STEPS, JOURNAL_ARTICLES, TESTIMONIALS, TRUST_METRICS, BRAND } from '../data/siteData';
@@ -268,8 +268,8 @@ export default function HomePage() {
       {/* 05: Before & After Layered Light Comparison */}
       <BeforeAfterSlider />
 
-      {/* 06: Interactive Smart Scene Simulator */}
-      <SmartSceneSimulator />
+      {/* 06: Interactive Lighting Simulation & Studio Visit Experience */}
+      <LightingSimulator />
 
       {/* 07: Space-by-Space Lighting Explorer */}
       <SpaceExplorer />

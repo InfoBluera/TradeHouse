@@ -54,6 +54,7 @@ export default function Footer() {
               <li><Link to="/projects" className="hover:text-luxe-gold transition-colors">Projects</Link></li>
               <li><Link to="/services" className="hover:text-luxe-gold transition-colors">Services</Link></li>
               <li><Link to="/lighting" className="hover:text-luxe-gold transition-colors">Lighting Gallery</Link></li>
+              <li><Link to="/lighting-simulator" className="hover:text-luxe-gold transition-colors">Lighting Simulator</Link></li>
               <li><Link to="/smart-lighting" className="hover:text-luxe-gold transition-colors">Smart Automation</Link></li>
               <li><Link to="/studio" className="hover:text-luxe-gold transition-colors">Kochi Studio</Link></li>
               <li><Link to="/about" className="hover:text-luxe-gold transition-colors">About Story</Link></li>

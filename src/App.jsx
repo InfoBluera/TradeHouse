@@ -18,6 +18,7 @@ import JournalPage from './pages/JournalPage';
 import JournalDetailPage from './pages/JournalDetailPage';
 import ContactPage from './pages/ContactPage';
 import StartAProjectPage from './pages/StartAProjectPage';
+import LightingSimulatorPage from './pages/LightingSimulatorPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -62,6 +63,8 @@ export default function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:id" element={<ProjectDetailPage />} />
             <Route path="/lighting" element={<LightingDiscoveryPage />} />
+            <Route path="/lighting-simulator" element={<LightingSimulatorPage />} />
+            <Route path="/simulator" element={<LightingSimulatorPage />} />
             <Route path="/smart-lighting" element={<SmartLightingPage />} />
             <Route path="/studio" element={<StudioPage />} />
             <Route path="/journal" element={<JournalPage />} />

@@ -31,6 +31,7 @@ export default function Header() {
     { name: 'Projects', href: '/projects' },
     { name: 'Services', href: '/services' },
     { name: 'Lighting', href: '/lighting' },
+    { name: 'Simulator', href: '/lighting-simulator' },
     { name: 'Smart Lighting', href: '/smart-lighting' },
     { name: 'Studio', href: '/studio' },
     { name: 'About', href: '/about' },
