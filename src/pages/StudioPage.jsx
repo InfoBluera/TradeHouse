@@ -149,7 +149,7 @@ export default function StudioPage() {
                 <MapPin className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5" />
                 <span>
                   <strong>Trade House Studio</strong><br />
-                  [SHOWROOM ADDRESS: Kalloor, Kochi, Kerala 682017, India]
+                  [SHOWROOM ADDRESS: 39-2435/A,39-2435/A1, IGS Square, South Janatha Road, Palarivattom, Kochi, Ernakulam, Kerala , 682025]
                 </span>
               </div>
               <div className="flex items-center gap-3">

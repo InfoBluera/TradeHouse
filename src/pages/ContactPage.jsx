@@ -47,7 +47,7 @@ export default function ContactPage() {
                   <div>
                     <strong className="text-white block text-sm">Trade House Experience Studio</strong>
                     <span className="text-neutral-400">
-                      [SHOWROOM ADDRESS: Kalloor, Kochi, Kerala 682017, India]
+                      [SHOWROOM ADDRESS: 39-2435/A,39-2435/A1, IGS Square, South Janatha Road, Palarivattom, Kochi, Ernakulam, Kerala , 682025]
                     </span>
                   </div>
                 </div>
