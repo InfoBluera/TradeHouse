@@ -3,7 +3,7 @@ name: Deploy TradeHouse
 on:
   push:
     branches:
-      - LIVE
+      - main
   workflow_dispatch:
 
 permissions:
