@@ -53,12 +53,12 @@ export default function SmartLightingPage() {
             Smart lighting is not about confusing smartphone apps or gimmicky colors. It is about quiet, intuitive harmony: one touch to transform an entire floor into an intimate dinner setting, and invisible sensors guiding midnight pathways.
           </p>
         </div>
+      </div>
 
-        {/* Interactive Scene Simulator */}
-        <div className="my-12">
-          <SmartSceneSimulator />
-        </div>
+      {/* Interactive Scene Simulator */}
+      <SmartSceneSimulator />
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Pillars of Intelligent Control */}
         <div className="my-24 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">

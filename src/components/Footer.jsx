@@ -57,7 +57,6 @@ export default function Footer() {
               <li><Link to="/smart-lighting" className="hover:text-luxe-gold transition-colors">Smart Automation</Link></li>
               <li><Link to="/studio" className="hover:text-luxe-gold transition-colors">Kochi Studio</Link></li>
               <li><Link to="/about" className="hover:text-luxe-gold transition-colors">About Story</Link></li>
-              <li><Link to="/journal" className="hover:text-luxe-gold transition-colors">Journal & Guides</Link></li>
               <li><Link to="/contact" className="hover:text-luxe-gold transition-colors">Contact</Link></li>
             </ul>
           </div>

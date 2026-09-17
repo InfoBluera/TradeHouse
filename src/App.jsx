@@ -21,8 +21,6 @@ import ProjectDetailPage from './pages/ProjectDetailPage';
 import LightingDiscoveryPage from './pages/LightingDiscoveryPage';
 import SmartLightingPage from './pages/SmartLightingPage';
 import StudioPage from './pages/StudioPage';
-import JournalPage from './pages/JournalPage';
-import JournalDetailPage from './pages/JournalDetailPage';
 import ContactPage from './pages/ContactPage';
 import StartAProjectPage from './pages/StartAProjectPage';
 
@@ -96,10 +94,6 @@ export default function App() {
 
             {/* Studio */}
             <Route path="/studio" element={<StudioPage />} />
-
-            {/* Journal */}
-            <Route path="/journal" element={<JournalPage />} />
-            <Route path="/journal/:slug" element={<JournalDetailPage />} />
 
             {/* Contact */}
             <Route path="/contact" element={<ContactPage />} />

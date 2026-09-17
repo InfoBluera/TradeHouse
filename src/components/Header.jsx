@@ -26,7 +26,7 @@ export default function Header() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // Main navigation menu items (Journal removed to ensure visual balance and uncrowded layout)
+  // Main navigation menu items
   const navLinks = [
     { name: 'Projects', href: '/projects' },
     { name: 'Services', href: '/services' },
