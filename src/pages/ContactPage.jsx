@@ -12,9 +12,30 @@ export default function ContactPage() {
     message: ''
   });
 
+  const getWhatsAppUrl = () => {
+    const whatsappNumber = BRAND.whatsapp.replace(/[^0-9]/g, '') || '917736636427';
+    const text =
+      `*New Inquiry — Trade House Lighting Studio*\n\n` +
+      `*Name:* ${formData.name}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Phone:* ${formData.phone ? formData.phone : 'Not provided'}\n` +
+      `*Inquiry Type:* ${formData.subject}\n\n` +
+      `*Message:*\n${formData.message}`;
+    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+    const whatsappUrl = getWhatsAppUrl();
+    try {
+      const win = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      if (!win) {
+        // If popup was blocked by browser, user can click the direct button on confirmation screen
+      }
+    } catch {
+      // In case window.open is restricted
+    }
   };
 
   return (
@@ -107,20 +128,66 @@ export default function ContactPage() {
           {/* Contact Message Form */}
           <div className="lg:col-span-7 p-8 sm:p-12 rounded-3xl bg-obsidian-900 border border-luxe-gold/25 shadow-2xl">
             {submitted ? (
-              <div className="text-center py-16 space-y-4">
-                <div className="w-14 h-14 rounded-full bg-luxe-gold/20 border border-luxe-gold flex items-center justify-center mx-auto text-luxe-gold">
+              <div className="text-center py-12 sm:py-16 space-y-5">
+                <div className="w-14 h-14 rounded-full bg-luxe-gold/20 border border-luxe-gold flex items-center justify-center mx-auto text-luxe-gold shadow-lg shadow-black/40">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="font-serif text-3xl text-white">Message Transmitted</h3>
+                <h3 className="font-serif text-3xl text-white">Inquiry Transmitted</h3>
                 <p className="text-xs sm:text-sm text-neutral-300 max-w-md mx-auto font-light leading-relaxed">
-                  Thank you, {formData.name}. Our architectural lighting team in Kochi has received your note and will reply promptly.
+                  Thank you, <strong>{formData.name}</strong>. Your inquiry details have been forwarded to our WhatsApp concierge. Our design team in Kochi will review your project and reply promptly.
                 </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="text-xs text-luxe-gold font-mono uppercase tracking-wider underline pt-4"
-                >
-                  Send Another Message
-                </button>
+
+                {/* Summary Card */}
+                <div className="p-5 rounded-2xl bg-obsidian-950 border border-white/10 text-left max-w-md mx-auto text-xs space-y-2 font-mono">
+                  <div className="flex justify-between border-b border-white/5 pb-2">
+                    <span className="text-neutral-400">Name:</span>
+                    <span className="text-white">{formData.name}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-white/5 pb-2">
+                    <span className="text-neutral-400">Email:</span>
+                    <span className="text-white">{formData.email}</span>
+                  </div>
+                  {formData.phone && (
+                    <div className="flex justify-between border-b border-white/5 pb-2">
+                      <span className="text-neutral-400">Phone:</span>
+                      <span className="text-white">{formData.phone}</span>
+                    </div>
+                  )}
+                  <div className="flex justify-between border-b border-white/5 pb-2">
+                    <span className="text-neutral-400">Type:</span>
+                    <span className="text-luxe-gold">{formData.subject}</span>
+                  </div>
+                  <div className="pt-1">
+                    <span className="text-neutral-400 block mb-1">Message:</span>
+                    <p className="text-neutral-200 font-sans text-xs line-clamp-3">{formData.message}</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
+                  <a
+                    href={getWhatsAppUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20"
+                  >
+                    <MessageSquare className="w-4 h-4" /> Continue in WhatsApp
+                  </a>
+                  <button
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({
+                        name: '',
+                        email: '',
+                        phone: '',
+                        subject: 'General Inquiry',
+                        message: ''
+                      });
+                    }}
+                    className="text-xs text-neutral-400 hover:text-white font-mono uppercase tracking-wider underline py-2"
+                  >
+                    Send Another Inquiry
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
