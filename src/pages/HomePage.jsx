@@ -13,15 +13,15 @@ import {
   Layers, 
   SlidersHorizontal,
   ChevronRight,
-  Eye,
-  Zap,
+  Eye, 
+  Zap, 
   ArrowUpRight
 } from 'lucide-react';
 import HeroLightAnimation from '../components/HeroLightAnimation';
 import SmartSceneSimulator from '../components/SmartSceneSimulator';
 import SpaceExplorer from '../components/SpaceExplorer';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
-import { SERVICES, PROJECTS, PROCESS_STEPS, JOURNAL_ARTICLES, TESTIMONIALS, TRUST_METRICS, BRAND } from '../data/siteData';
+import { SERVICES, PROJECTS, PROCESS_STEPS, TESTIMONIALS, TRUST_METRICS, BRAND } from '../data/siteData';
 
 export default function HomePage() {
   return (
@@ -434,71 +434,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 11: Editorial Journal & Knowledge Section */}
-      <section className="relative py-28 bg-obsidian-900/60 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-white/10 pb-8">
-            <div className="space-y-3">
-              <span className="text-xs uppercase tracking-[0.25em] text-luxe-gold font-mono">
-                Editorial &amp; Insights
-              </span>
-              <h2 className="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-wide">
-                Architectural Journal
-              </h2>
-              <p className="text-neutral-400 text-sm sm:text-base max-w-xl font-light">
-                Guides, photometrics, and lighting strategies for architects and discerning homeowners.
-              </p>
-            </div>
 
-            <Link
-              to="/journal"
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-luxe-gold hover:text-white transition-colors self-start md:self-auto"
-            >
-              Read Full Journal <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {JOURNAL_ARTICLES.slice(0, 3).map((article) => (
-              <Link
-                key={article.slug}
-                to={`/journal/${article.slug}`}
-                className="group rounded-3xl overflow-hidden bg-obsidian-900 border border-white/5 hover:border-luxe-gold/30 transition-all duration-300 flex flex-col"
-              >
-                <div className="h-52 overflow-hidden relative">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian-950/80 backdrop-blur-md border border-white/10 text-[10px] font-mono text-luxe-gold uppercase tracking-wider">
-                    {article.category}
-                  </div>
-                </div>
-                <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
-                  <div className="space-y-2">
-                    <span className="text-[10px] font-mono text-neutral-400">
-                      {article.date} • {article.readTime}
-                    </span>
-                    <h3 className="font-serif text-xl text-white font-medium group-hover:text-luxe-champagne transition-colors line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-xs text-neutral-400 font-light line-clamp-2">
-                      {article.summary}
-                    </p>
-                  </div>
-                  <div className="pt-4 border-t border-white/5 flex items-center gap-1.5 text-xs text-luxe-gold font-mono font-medium">
-                    <span>Read Article</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 12: Grand High-Conversion Final CTA */}
+      {/* 11: Grand High-Conversion Final CTA */}
       <section className="relative py-32 bg-obsidian-950 border-t border-white/10 overflow-hidden text-center">
         {/* Ambient Radial Spotlight - Subtle, Soft Ivory Warmth */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-radial-glow from-white/[0.06] via-luxe-gold/[0.03] to-transparent blur-3xl pointer-events-none" />

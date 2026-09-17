@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { MapPin, Clock, Phone, Mail, Calendar, Sparkles, CheckCircle2, ArrowRight, MessageSquare } from 'lucide-react';
-import { BRAND } from '../data/siteData';
+import {
+  ArrowRight,
+  CheckCircle2,
+  Clock,
+  Mail,
+  MapPin,
+  MessageSquare,
+  Phone,
+  Sparkles,
+} from "lucide-react";
+import { useState } from "react";
+import { BRAND } from "../data/siteData";
 
 export default function StudioPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    preferredDate: '',
-    projectType: 'Luxury Villa / Residence',
-    notes: '',
+    name: "",
+    phone: "",
+    email: "",
+    preferredDate: "",
+    projectType: "Luxury Villa / Residence",
+    notes: "",
   });
 
   const handleSubmit = (e) => {
@@ -22,20 +30,20 @@ export default function StudioPage() {
   const experienceZones = [
     {
       title: "The Dark Room Simulation Lab",
-      desc: "Step inside a light-tight black box to evaluate narrow 10° spot optics versus wide wall washes on real stone, laterite, and wood veneers."
+      desc: "Step inside a light-tight black box to evaluate narrow 10° spot optics versus wide wall washes on real stone, laterite, and wood veneers.",
     },
     {
       title: "Color Spectrum & CCT Comparison Bar",
-      desc: "Compare low CRI 80 commercial LEDs against high CRI 98 museum engines side-by-side to see how genuine wood grain comes alive."
+      desc: "Compare low CRI 80 commercial LEDs against high CRI 98 museum engines side-by-side to see how genuine wood grain comes alive.",
     },
     {
       title: "Architectural Profile & Magnetic Gallery",
-      desc: "Inspect live 48V low-voltage magnetic track channels, seamless trimless plaster-in downlights, and dot-free linear profiles."
+      desc: "Inspect live 48V low-voltage magnetic track channels, seamless trimless plaster-in downlights, and dot-free linear profiles.",
     },
     {
       title: "Smart Automation Keypad Lounge",
-      desc: "Interact with tactile solid-milled brass and matte black scene keypads, testing instant scene recall and smooth 0.1% dimming curves."
-    }
+      desc: "Interact with tactile solid-milled brass and matte black scene keypads, testing instant scene recall and smooth 0.1% dimming curves.",
+    },
   ];
 
   return (
@@ -48,10 +56,14 @@ export default function StudioPage() {
           </div>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light uppercase tracking-tight text-white">
             Experience Light <br />
-            <span className="gold-gradient-text italic font-normal">Before You Choose It.</span>
+            <span className="gold-gradient-text italic font-normal">
+              Before You Choose It.
+            </span>
           </h1>
           <p className="text-neutral-300 text-sm sm:text-base font-light leading-relaxed">
-            Our upcoming studio in Kalloor, Kochi is designed as an architectural laboratory where architects, interior designers, and homeowners experience light physically in space.
+            Our upcoming studio in Kalloor, Kochi is designed as an
+            architectural laboratory where architects, interior designers, and
+            homeowners experience light physically in space.
           </p>
         </div>
 
@@ -66,10 +78,16 @@ export default function StudioPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-obsidian-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between">
               <div>
-                <span className="text-[10px] font-mono tracking-widest uppercase text-luxe-gold">Experience Center</span>
-                <p className="text-sm font-medium text-white">Main Architectural Gallery &amp; Simulation Zone</p>
+                <span className="text-[10px] font-mono tracking-widest uppercase text-luxe-gold">
+                  Experience Center
+                </span>
+                <p className="text-sm font-medium text-white">
+                  Main Architectural Gallery &amp; Simulation Zone
+                </p>
               </div>
-              <span className="text-xs font-mono text-emerald-400">Kalloor, Kochi</span>
+              <span className="text-xs font-mono text-emerald-400">
+                Kalloor, Kochi
+              </span>
             </div>
           </div>
 
@@ -113,7 +131,10 @@ export default function StudioPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {experienceZones.map((zone, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-obsidian-900 border border-white/5 space-y-4">
+              <div
+                key={idx}
+                className="p-8 rounded-3xl bg-obsidian-900 border border-white/5 space-y-4"
+              >
                 <span className="font-mono text-xs text-luxe-gold font-semibold uppercase tracking-wider block">
                   Zone 0{idx + 1}
                 </span>
@@ -136,11 +157,10 @@ export default function StudioPage() {
               <span className="text-xs uppercase tracking-[0.25em] text-luxe-gold font-mono">
                 Studio Location
               </span>
-              <h2 className="font-serif text-3xl text-white">
-                Kalloor, Kochi
-              </h2>
+              <h2 className="font-serif text-3xl text-white">Kalloor, Kochi</h2>
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
-                Conveniently situated in Kalloor with dedicated client parking and private architectural consultation suites.
+                Conveniently situated in Kalloor with dedicated client parking
+                and private architectural consultation suites.
               </p>
             </div>
 
@@ -148,8 +168,10 @@ export default function StudioPage() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5" />
                 <span>
-                  <strong>Trade House Studio</strong><br />
-                  [SHOWROOM ADDRESS: 39-2435/A,39-2435/A1, IGS Square, South Janatha Road, Palarivattom, Kochi, Ernakulam, Kerala , 682025]
+                  <strong>Trade House Studio</strong>
+                  <br />
+                  [SHOWROOM ADDRESS: 39-2435/A,39-2435/A1, IGS Square, South
+                  Janatha Road, Palarivattom, Kochi, Ernakulam, Kerala , 682025]
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -183,9 +205,13 @@ export default function StudioPage() {
                 <div className="w-14 h-14 rounded-full bg-luxe-gold/20 border border-luxe-gold flex items-center justify-center mx-auto text-luxe-gold">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="font-serif text-3xl text-white">Walkthrough Requested</h3>
+                <h3 className="font-serif text-3xl text-white">
+                  Walkthrough Requested
+                </h3>
                 <p className="text-xs sm:text-sm text-neutral-300 max-w-md mx-auto font-light leading-relaxed">
-                  Thank you, {formData.name || 'Valued Client'}. Our lighting design team in Kalloor, Kochi will contact you shortly to confirm your private studio consultation time.
+                  Thank you, {formData.name || "Valued Client"}. Our lighting
+                  design team in Kalloor, Kochi will contact you shortly to
+                  confirm your private studio consultation time.
                 </p>
                 <button
                   onClick={() => setFormSubmitted(false)}
@@ -204,30 +230,39 @@ export default function StudioPage() {
                     Book a Studio Walkthrough
                   </h3>
                   <p className="text-xs text-neutral-400 font-light mt-1">
-                    Bring your architectural floorplans and interior material samples for a live photometric demonstration.
+                    Bring your architectural floorplans and interior material
+                    samples for a live photometric demonstration.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono uppercase text-neutral-300">Your Full Name *</label>
+                    <label className="text-[11px] font-mono uppercase text-neutral-300">
+                      Your Full Name *
+                    </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Ar. Rahul Varma"
+                      placeholder="e.g. Ar. Harikrishnan"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       className="w-full bg-obsidian-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-luxe-gold/60"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono uppercase text-neutral-300">Contact Number *</label>
+                    <label className="text-[11px] font-mono uppercase text-neutral-300">
+                      Contact Number *
+                    </label>
                     <input
                       type="tel"
                       required
                       placeholder="+91 98460 XXXXX"
                       value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
                       className="w-full bg-obsidian-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-luxe-gold/60"
                     />
                   </div>
@@ -235,31 +270,46 @@ export default function StudioPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono uppercase text-neutral-300">Email Address</label>
+                    <label className="text-[11px] font-mono uppercase text-neutral-300">
+                      Email Address
+                    </label>
                     <input
                       type="email"
                       placeholder="your.name@domain.com"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       className="w-full bg-obsidian-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-luxe-gold/60"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono uppercase text-neutral-300">Preferred Date</label>
+                    <label className="text-[11px] font-mono uppercase text-neutral-300">
+                      Preferred Date
+                    </label>
                     <input
                       type="date"
                       value={formData.preferredDate}
-                      onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          preferredDate: e.target.value,
+                        })
+                      }
                       className="w-full bg-obsidian-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-luxe-gold/60"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-mono uppercase text-neutral-300">Project Type</label>
+                  <label className="text-[11px] font-mono uppercase text-neutral-300">
+                    Project Type
+                  </label>
                   <select
                     value={formData.projectType}
-                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, projectType: e.target.value })
+                    }
                     className="w-full bg-obsidian-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-luxe-gold/60"
                   >
                     <option>Luxury Villa / Residence</option>
@@ -271,12 +321,16 @@ export default function StudioPage() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-mono uppercase text-neutral-300">Notes / Floorplan status</label>
+                  <label className="text-[11px] font-mono uppercase text-neutral-300">
+                    Notes / Floorplan status
+                  </label>
                   <textarea
                     rows={3}
                     placeholder="Tell us about the stage of your project (e.g. electrical conduit stage, ceiling framing, renovation)..."
                     value={formData.notes}
-                    onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, notes: e.target.value })
+                    }
                     className="w-full bg-obsidian-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-luxe-gold/60"
                   />
                 </div>

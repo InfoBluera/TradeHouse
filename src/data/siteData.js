@@ -812,23 +812,23 @@ export const TESTIMONIALS = [
   {
     quote:
       "Trade House transformed our waterfront villa in Kadavanthra. Their understanding of low-glare architectural optics meant our exposed concrete ceiling looks sculptural, not cluttered. Truly Kochi's best lighting consultants.",
-    client: "Ar. Rahul Varma",
-    role: "Principal Architect, Varma & Associates",
-    project: "Kadavanthra Waterfront Villa",
+    client: "Maharof",
+    role: "Principal Architect, K-Square",
+    project: "Waterfront Villa",
   },
   {
     quote:
       "The smart lighting scenes programmed by Trade House are pure magic. One touch transforms our living area from a bright family dinner to a relaxed amber lounge. Their execution team in Kochi was exceptionally professional.",
-    client: "Dr. Anjali Menon",
-    role: "Homeowner",
-    project: "Skyline Marine Drive Penthouse",
+    client: "Ar. Harikrishnan",
+    role: "Lighting & Spatial Design Director",
+    project: "Villa Project",
   },
   {
     quote:
       "As an architect, finding a lighting partner who understands photometrics, UGR values, and precision trimless detailing is rare. Trade House brings world-class lighting design to Kerala.",
-    client: "Thomas Kurian",
+    client: "Shibil",
     role: "Design Director, Atelier Tropical",
-    project: "Fort Kochi Boutique Heritage Hotel",
+    project: "Royal Palm Residency",
   },
 ];
 
@@ -844,7 +844,7 @@ export const TRUST_METRICS = [
     sub: "True-to-life architectural rendering",
   },
   {
-    value: "UGR < 11",
+    value: "UGR < 9",
     label: "Ultra Low-Glare Optics",
     sub: "Light without visual discomfort",
   },
