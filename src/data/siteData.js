@@ -15,144 +15,203 @@ export const BRAND = {
     "Trade House Experience Studio, 39-2435/A,39-2435/A1, IGS Square, South Janatha Road, Palarivattom, Kochi, Ernakulam, Kerala , 682025",
 };
 
+export const SERVICE_CATEGORIES = [
+  {
+    id: "planning",
+    number: "01",
+    title: "Lighting & Electrical Planning",
+    tagline: "Design, Photometrics & Technical Blueprints",
+    description:
+      "Complete architectural lighting strategy, DIALux photometric calculations, and comprehensive CAD electrical drawings to ensure flawless engineering before construction begins.",
+    scope: [
+      "Architectural Lighting Design & Concepts",
+      "Photometric Lux & Glare Calculations (DIALux EVO)",
+      "Complete Electrical Layout & Circuit Drawings",
+      "Light Positioning, Looping & Switch Planning",
+      "Architectural, MEP & Contractor Coordination",
+      "Curated Fixture Schedules & Technical Specification",
+    ],
+  },
+  {
+    id: "execution",
+    number: "02",
+    title: "Lighting Execution & Installation",
+    tagline: "On-Site Wiring, Fixture Installation & Commissioning",
+    description:
+      "End-to-end on-site implementation ensuring zero design compromise—from electrical wiring and trimless plaster-in profiling to evening optical aiming and smart scene setup.",
+    scope: [
+      "On-Site Electrical Wiring & Conduiting",
+      "Laser-Aligned Fixture Installation",
+      "Trimless Plaster-in & Magnetic Track Detailing",
+      "Chandelier Suspension & Void Engineering",
+      "Implementation Strictly to Approved Lighting Plans",
+      "Twilight Optical Aiming, Smart Commissioning & Handover",
+    ],
+  },
+];
+
 export const SERVICES = [
   {
     id: "lighting-design",
     slug: "lighting-design",
+    aliases: ["design", "lighting-design-strategy"],
     number: "01",
-    title: "Lighting Design & Strategy",
+    category: "Lighting & Electrical Planning",
+    categorySlug: "planning",
+    pillarNumber: "01",
+    title: "Lighting Design & Photometric Strategy",
     shortDesc:
       "Concept development, photometrics, lux calculations, architectural lighting layouts, and artistic design intent.",
     fullDesc:
-      "We craft thoughtful lighting narratives that respond to the unique volume, materiality, and geometry of each space. From initial conceptual moodboards to detailed CAD/DIALux photometric calculations, our designs sculpt spatial perception while eliminating uncomfortable glare.",
+      "We craft thoughtful lighting narratives that respond to the unique volume, materiality, and geometry of each space. From initial conceptual moodboards to detailed CAD/DIALux photometric calculations, our designs sculpt spatial perception while eliminating uncomfortable glare (UGR < 11).",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
     features: [
       "Custom Lux & Foot-Candle Calculations (DIALux EVO)",
       "Layered Lighting Schemes (Ambient, Accent, Task, Kinetic)",
-      "Architectural Glare Mitigation (UGR < 13 standards)",
-      "Material & Specular Reflectance Studies",
+      "Architectural Glare Mitigation (UGR < 11 standards)",
+      "Material & Specular Reflectance Studies on Kerala Stones & Timber",
       "Coordination with Architects & Interior Designers",
     ],
     idealFor:
       "Luxury residences, signature villas, commercial developments, and boutique hospitality.",
     deliverables:
-      "Comprehensive CAD lighting plans, fixture schedules, photometric simulation reports, and circuit load sheets.",
+      "Comprehensive photometric simulation reports, spatial moodboards, illuminance heatmaps, and lighting narrative documents.",
   },
   {
-    id: "architectural-lighting",
-    slug: "architectural-lighting",
+    id: "electrical-drawings-planning",
+    slug: "electrical-drawings-planning",
+    aliases: ["electrical-drawings", "circuit-planning", "electrical-planning"],
     number: "02",
-    title: "Architectural Lighting",
+    category: "Lighting & Electrical Planning",
+    categorySlug: "planning",
+    pillarNumber: "01",
+    title: "Electrical Drawings & Circuit Planning",
     shortDesc:
-      "Precision trimless downlights, magnetic track systems, wall grazers, and seamless cove integration.",
+      "Complete CAD electrical plans, light positioning, circuit looping, driver load allocation, and MEP contractor coordination.",
     fullDesc:
-      "Architectural lighting must be felt rather than overtly seen. We specify miniaturized, deep-recessed trimless fixtures with high Color Rendering (CRI 97+), bespoke beam angles (10° to 60°), and specialized optical lenses that reveal textures of stone, wood, and concrete.",
+      "A great lighting design is only as good as the electrical engineering behind it. We produce millimeter-accurate CAD electrical drawings detailing fixture coordinates, circuit groupings, conduit paths, dimming channels, driver locations, and phase load balancing for seamless on-site execution.",
+    image:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85",
+    features: [
+      "Detailed CAD Lighting Layout & Positioning Plans",
+      "Switch-to-Fixture Circuit Looping & Dimming Channel Maps",
+      "Remote Driver Housing & Low-Voltage Power Drop Schematics",
+      "Phase Load Balancing & Voltage Drop Calculations",
+      "Direct Technical Coordination with Project MEP & Electrical Contractors",
+    ],
+    idealFor:
+      "New residential construction, extensive villa remodels, commercial spaces, and multi-story structures.",
+    deliverables:
+      "Complete DWG/PDF electrical drawings, circuit schedule spreadsheets, conduit routing plans, and electrical contractor handover guides.",
+  },
+  {
+    id: "fixture-specification-supply",
+    slug: "fixture-specification-supply",
+    aliases: ["lighting-supply", "architectural-lighting", "decorative-lighting"],
+    number: "03",
+    category: "Lighting & Electrical Planning",
+    categorySlug: "planning",
+    pillarNumber: "01",
+    title: "Curated Fixture Specification & Supply",
+    shortDesc:
+      "Direct specification and supply of high-CRI trimless architectural fixtures, 48V magnetic tracks, IP68 outdoor luminaires, and bespoke statement pieces.",
+    fullDesc:
+      "We eliminate supply-chain uncertainty by curating and supplying verified, architectural-grade luminaires. Every downlight, linear profile, magnetic track module, and driver is rigorously tested for thermal management, high color fidelity (CRI 97+), and resilience to Kerala's coastal climate.",
     image:
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85",
     features: [
-      "Deep-baffle & Trimless Plaster-in Downlights",
-      "Low-Voltage (48V) Ultra-Slim Magnetic Track Systems",
-      "Continuous Micro-Linear Cove & Contour Profiles",
-      "Facade & Column Grazing with Asymmetric Optics",
-      "Inground IP67 Walk-over & Drive-over Architectural Luminaires",
-    ],
-    idealFor:
-      "Modern minimalist homes, double-height atriums, exposed concrete structures, and art galleries.",
-    deliverables:
-      "Detailed installation details, cut sheets, mounting profiles, and driver load allocation.",
-  },
-  {
-    id: "decorative-lighting",
-    slug: "decorative-lighting",
-    number: "03",
-    title: "Decorative & Statement Fixtures",
-    shortDesc:
-      "Hand-blown glass pendants, grand chandeliers, sculptural floor lamps, and artisan wall sconces.",
-    fullDesc:
-      "Decorative fixtures serve as the jewelry of the home. Trade House curates and custom-fabricates statement pieces sourced from world-class European and artisanal ateliers, balancing poetic aesthetics with calibrated illumination.",
-    image:
-      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=1200&q=85",
-    features: [
-      "Hand-blown Murano & Bohemian Glass Sculptures",
-      "Bespoke Brass, Bronze, and Brushed Metal Fabrications",
-      "Double-Height Void Chandeliers with Custom Drops",
-      "Acoustic Fabric & Sculptural Dining Pendants",
-      "Architectural Wall Sconces with Indirect Warm Glow",
-    ],
-    idealFor:
-      "Dining suites, grand foyers, master bedrooms, stairwell voids, and executive lounges.",
-    deliverables:
-      "Custom scale mockups, ceiling load verification, suspension detailing, and electrical provisioning.",
-  },
-  {
-    id: "smart-lighting",
-    slug: "smart-lighting",
-    number: "04",
-    title: "Smart Lighting & Automation",
-    shortDesc:
-      "Human-centric circadian lighting, scene presets, tunable white, and intelligent automated control.",
-    fullDesc:
-      "Transform your living environment with lighting that syncs with natural biological rhythms. From soft 1800K candlelight in the evening to crisp 4000K for morning vitality, experience intuitive wall keypads, smartphone control, and invisible sensor automation.",
-    image:
-      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=85",
-    features: [
-      "Circadian Tunable White (1800K – 6500K dynamic transitions)",
-      "DALI-2, 0-10V, Phase, and Wireless Bluetooth Mesh (Casambi)",
-      "Designer Custom-Engraved Metallic Keypads",
-      "Astronomical Clock Integration & Pathway Night Modes",
-      "Single-Touch Scene Recall (Enter, Entertain, Cinema, Away)",
-    ],
-    idealFor:
-      "Smart villas, automated penthouses, luxury hospitality, and high-end corporate suites.",
-    deliverables:
-      "Automation schematics, keypad engravings, DALI address maps, and full scene programming.",
-  },
-  {
-    id: "lighting-supply",
-    slug: "lighting-supply",
-    number: "05",
-    title: "Curated Lighting Supply",
-    shortDesc:
-      "Direct access to premier global and architectural lighting manufacturers with warranty and technical backing.",
-    fullDesc:
-      "Eliminate supply-chain risks with our verified, quality-tested product procurement. Every luminaire, driver, lens, and channel supplied by Trade House undergoes stringent thermal, photometric, and electrical testing suited for Kerala's coastal climate.",
-    image:
-      "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=1200&q=85",
-    features: [
-      "High-CRI (>97) & High-R9 (>90) LED Engines",
+      "High-CRI (>97) & High-R9 (>90) LED Optical Engines",
+      "Deep-Baffle Trimless Downlights & 48V Ultra-Slim Magnetic Tracks",
+      "Marine-Grade IP65/IP67/IP68 Anti-Corrosion Landscape Luminaires",
       "Flicker-Free, Ripple-Free Premium Drivers (Tridonic, MeanWell)",
-      "Marine-Grade Anti-Corrosion Finishes (IP65/IP67/IP68)",
-      "Direct Factory Collaboration & Custom Length Runs",
-      "Complete 3 to 5-Year Comprehensive Replacement Warranty",
+      "Comprehensive 3 to 5-Year Replacement Warranty & Spares Provisioning",
     ],
     idealFor:
-      "Architects and contractors requiring guaranteed specifications and zero on-site component failures.",
+      "Architects and homeowners requiring guaranteed optical specifications, zero flicker, and lasting build quality.",
     deliverables:
-      "Batch testing logs, warranty certificates, spare parts provisioning, and delivery phasing.",
+      "Comprehensive fixture schedule sheets, photometric cut-sheets, driver allocation charts, batch quality inspection logs, and warranty certificates.",
   },
   {
-    id: "installation",
-    slug: "installation",
-    number: "06",
-    title: "Execution, Focusing & Commissioning",
+    id: "on-site-electrical-execution",
+    slug: "on-site-electrical-execution",
+    aliases: ["electrical-wiring", "electrical-coordination", "wiring-execution"],
+    number: "04",
+    category: "Lighting Execution & Installation",
+    categorySlug: "execution",
+    pillarNumber: "02",
+    title: "On-Site Electrical Execution & Wiring",
     shortDesc:
-      "End-to-end site supervision, precision fixture focusing, honeycomb louver calibration, and scene tuning.",
+      "Precision conduit routing, low-voltage cabling, driver housing integration, and hands-on site coordination according to the approved electrical plan.",
     fullDesc:
-      "Even the finest fixture fails if focused poorly. Our master technicians supervise conduit routing, align laser-straight profile channels, install anti-glare honeycomb louvers, and conduct evening fine-tuning sessions to ensure every beam hits its exact architectural target.",
+      "Trade House's technical project engineers oversee and execute the electrical infrastructure on-site. We ensure conduit pathways, backboxes, driver enclosures, and low-voltage drops are installed with millimeter precision, guaranteeing zero site clashes with MEP or HVAC systems.",
+    image:
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=85",
+    features: [
+      "On-Site Electrical Wiring & Low-Voltage Cable Laying",
+      "Verification of Conduit & Junction Box Coordinates Before Plastering",
+      "Ventilated Driver Panel & Control Cabinet Assembly",
+      "Grounding, Insulation & Voltage Drop Integrity Testing",
+      "Active Coordination with Civil, MEP, Ceiling, and Interior Teams",
+    ],
+    idealFor:
+      "Projects where electrical perfection and seamless coordination between contractors are critical to avoid costly rework.",
+    deliverables:
+      "Site inspection milestones, cable run logs, driver cabinet wiring schematics, and pre-installation verification sign-offs.",
+  },
+  {
+    id: "fixture-installation-alignment",
+    slug: "fixture-installation-alignment",
+    aliases: ["installation", "fixture-installation"],
+    number: "05",
+    category: "Lighting Execution & Installation",
+    categorySlug: "execution",
+    pillarNumber: "02",
+    title: "Precision Fixture Installation & Laser Alignment",
+    shortDesc:
+      "Laser-straight magnetic profile mounting, trimless plaster-in downlight integration, chandelier suspension, and anti-glare optical attachment.",
+    fullDesc:
+      "Even the highest-grade luminaire loses its value if installed poorly. Our master technicians handle the physical installation with extreme craftsmanship—using laser leveling for continuous profiles, seamless plaster-in feathering for trimless downlights, and ceiling load engineering for grand chandeliers.",
     image:
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
     features: [
-      "On-site Precision Laser-Level Alignment",
-      "Optical Beam Shaping & Honeycomb Louver Attachment",
-      "Evening Scene Tuning with Homeowners & Designers",
-      "Thermal Dissipation Checks & Voltage Drop Verification",
-      "Full Handover Documentation & Preventive Maintenance",
+      "Laser-Level Alignment for Continuous Magnetic Tracks & Cove Profiles",
+      "Seamless Plaster-in Mudding & Feathering for Trimless Downlights",
+      "Structural Ceiling Load Verification & Chandelier Suspension",
+      "Optical Accessory Fitting (Honeycomb Louvers, Linear Spread Lenses, Dark Reflectors)",
+      "Zero-Scratch, Cleanroom-Grade Finishing & Protection",
     ],
     idealFor:
-      "Projects where architectural perfection and millimeter-precise execution are non-negotiable.",
+      "Double-height voids, minimalist architectural homes, exposed concrete ceilings, and luxury hospitality venues.",
     deliverables:
-      "Commissioning test reports, focused beam audit, user training, and maintenance manual.",
+      "Pre-fitment inspection reports, structural suspension certifications, and physical alignment audit checklist.",
+  },
+  {
+    id: "commissioning-smart-tuning",
+    slug: "commissioning-smart-tuning",
+    aliases: ["smart-lighting", "commissioning", "focusing-commissioning"],
+    number: "06",
+    category: "Lighting Execution & Installation",
+    categorySlug: "execution",
+    pillarNumber: "02",
+    title: "Twilight Aiming, Commissioning & Smart Setup",
+    shortDesc:
+      "Evening optical aiming, honeycomb calibration, DALI-2 & Casambi smart scene programming, lux verification, and handover.",
+    fullDesc:
+      "During exclusive twilight and nighttime sessions, our lighting designers personally fine-tune every beam angle, adjust glare cutoffs on art, and program smart scenes (Morning, Entertaining, Dinner, Cinema Noir). We verify DIALux lux levels with calibrated light meters before handing over the project.",
+    image:
+      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=85",
+    features: [
+      "Evening Fine-Tuning & Optical Aiming with Homeowners and Architects",
+      "Smart Lighting Programming (DALI-2, Casambi, Tunable White 1800K–6500K)",
+      "Keypad Engraving & Scene Preset Configuration (Entertain, Relax, Cinema)",
+      "On-Site Lux Meter & Color Temperature Calibration Audits",
+      "Comprehensive Handover Manual, Client Training & 5-Year Care Protocol",
+    ],
+    idealFor:
+      "Smart villas, architectural residences, and spaces where nighttime atmosphere and intuitive controls are paramount.",
+    deliverables:
+      "Final commissioning report, calibrated lux verification sheets, smart automation backup files, and maintenance manual.",
   },
 ];
 
