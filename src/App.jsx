@@ -64,7 +64,7 @@ function NotFound() {
 
 export default function App() {
   return (
-    <Router basename="/TradeHouse">
+    <Router basename="/">
       <ScrollToTop />
 
       <div className="min-h-screen flex flex-col bg-obsidian-950 text-[#F4F3EE] selection:bg-luxe-gold selection:text-obsidian-950">
