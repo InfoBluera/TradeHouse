@@ -46,13 +46,13 @@ export default function StartAProjectPage() {
   ];
 
   const serviceOptions = [
-    'Lighting Design & Concept',
-    'Architectural Fixture Supply',
-    'Decorative Statement Fixtures',
-    'Smart Lighting & Tunable White',
-    'Home Automation Keypads',
-    'Turnkey Installation & Commissioning',
-    'Site Photometric Consultation'
+    'Lighting Design & Photometrics',
+    'CAD Electrical Drawings & Circuit Plans',
+    'Curated Architectural Fixture Supply',
+    'On-Site Electrical Wiring & Execution',
+    'Precision Fixture Installation & Laser Leveling',
+    'Twilight Aiming & Smart Scene Setup',
+    'Complete Turnkey (Planning to Execution)'
   ];
 
   const scaleOptions = [
