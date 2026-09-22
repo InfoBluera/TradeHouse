@@ -189,7 +189,16 @@ export default function Header() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <div className="flex items-center justify-between text-xs text-neutral-400 pt-2 border-t border-white/10">
-              <span className="text-[11px]">{BRAND.location}</span>
+              <a
+                href={BRAND.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] hover:text-luxe-gold transition-colors inline-flex items-center gap-1"
+                title="Open Trade House on Google Maps"
+              >
+                <span>{BRAND.location}</span>
+                <span className="text-luxe-gold text-[10px]">↗</span>
+              </a>
               <a href={BRAND.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-luxe-gold text-[11px] hover:underline font-mono">
                 WhatsApp Studio
               </a>

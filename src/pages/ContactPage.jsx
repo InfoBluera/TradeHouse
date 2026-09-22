@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BRAND } from '../data/siteData';
-import { MapPin, Phone, Mail, Clock, MessageSquare, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Clock, MessageSquare, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -63,15 +63,29 @@ export default function ContactPage() {
               </span>
 
               <div className="space-y-4 text-xs">
-                <div className="flex items-start gap-3.5">
-                  <MapPin className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5" />
+                <a
+                  href={BRAND.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3.5 hover:text-luxe-gold transition-colors"
+                  title="Open in Google Maps"
+                >
+                  <MapPin className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <strong className="text-white block text-sm">Trade House Experience Studio</strong>
-                    <span className="text-neutral-400">
-                      [SHOWROOM ADDRESS: 39-2435/A,39-2435/A1, IGS Square, South Janatha Road, Palarivattom, Kochi, Ernakulam, Kerala , 682025]
+                    <div className="flex items-center gap-1.5">
+                      <strong className="text-white group-hover:text-luxe-gold transition-colors block text-sm">
+                        Trade House Experience Studio
+                      </strong>
+                      <ArrowRight className="w-3.5 h-3.5 text-luxe-gold opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors block">
+                      {BRAND.address}
+                    </span>
+                    <span className="text-[11px] text-luxe-gold/90 group-hover:text-luxe-gold flex items-center gap-1 mt-1 font-mono uppercase tracking-wider underline">
+                      View on Google Maps →
                     </span>
                   </div>
-                </div>
+                </a>
 
                 <div className="flex items-start gap-3.5 border-t border-white/5 pt-3">
                   <Clock className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5" />
@@ -87,16 +101,6 @@ export default function ContactPage() {
                     <strong className="text-white block text-sm">Studio Phone</strong>
                     <a href={`tel:${BRAND.phone}`} className="text-neutral-300 hover:text-luxe-gold transition-colors">
                       {BRAND.phone}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3.5 border-t border-white/5 pt-3">
-                  <Mail className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-white block text-sm">Email Inquiries</strong>
-                    <a href={`mailto:${BRAND.email}`} className="text-neutral-300 hover:text-luxe-gold transition-colors">
-                      {BRAND.email}
                     </a>
                   </div>
                 </div>
