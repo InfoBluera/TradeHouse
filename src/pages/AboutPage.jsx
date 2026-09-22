@@ -233,7 +233,7 @@ export default function AboutPage() {
               </p>
               <div className="pt-4 flex flex-wrap gap-4">
                 <Link
-                  to="/experience-studio"
+                  to="/studio"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold uppercase tracking-wider hover:bg-luxe-champagne transition-all shadow-lg shadow-black/40"
                 >
                   Book Private Studio Tour <ArrowRight className="w-3.5 h-3.5" />
@@ -349,7 +349,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
             <Link
-              to="/experience-studio"
+              to="/studio"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold uppercase tracking-wider hover:bg-luxe-champagne transition-all shadow-xl shadow-luxe-gold/10"
             >
               Visit Kochi Experience Studio <ArrowRight className="w-4 h-4" />
