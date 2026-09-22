@@ -1,48 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
-    <loc>https://tradehouse.lighting/</loc>
+    <loc>https://tradehouselighting.com/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Core Section Pages -->
+  <url>
+    <loc>https://tradehouselighting.com/projects</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://tradehouse.lighting/about</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://tradehouse.lighting/services</loc>
     <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://tradehouse.lighting/projects</loc>
+    <loc>https://tradehouselighting.com/services</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/lighting</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tradehouse.lighting/lighting</loc>
+    <loc>https://tradehouselighting.com/smart-lighting</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/studio</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/about</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/contact</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/start-a-project</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://tradehouse.lighting/smart-lighting</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://tradehouse.lighting/studio</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://tradehouse.lighting/contact</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
-    <loc>https://tradehouse.lighting/start-a-project</loc>
     <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Dynamic Service Detail Pages -->
+  <url>
+    <loc>https://tradehouselighting.com/services/lighting-design</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/services/electrical-drawings-planning</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/services/fixture-specification-supply</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/services/on-site-electrical-execution</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/services/fixture-installation-alignment</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/services/commissioning-smart-tuning</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Dynamic Project Detail Case Studies -->
+  <url>
+    <loc>https://tradehouselighting.com/projects/terratone-hotel</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/projects/prestige-residence</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/projects/hedge-cafe</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/projects/rajesh-residence</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tradehouselighting.com/projects/bismi-home-appliances</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
