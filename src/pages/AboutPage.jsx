@@ -254,19 +254,28 @@ export default function AboutPage() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-obsidian-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] font-mono tracking-widest uppercase text-luxe-gold">
-                    Flagship Destination
-                  </span>
-                  <p className="text-xs sm:text-sm font-medium text-white">
-                    Palarivattom / Kalloor, Kochi
-                  </p>
+              <a
+                href={BRAND.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-obsidian-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between hover:border-luxe-gold/50 transition-all group/loc"
+                title="Open location in Google Maps"
+              >
+                <div className="flex items-center gap-2.5">
+                  <MapPin className="w-4 h-4 text-luxe-gold shrink-0" />
+                  <div>
+                    <span className="text-[10px] font-mono tracking-widest uppercase text-luxe-gold">
+                      Flagship Destination
+                    </span>
+                    <p className="text-xs sm:text-sm font-medium text-white group-hover/loc:text-luxe-gold transition-colors">
+                      Palarivattom / Kalloor, Kochi
+                    </p>
+                  </div>
                 </div>
-                <span className="text-xs font-mono text-emerald-400 bg-emerald-950/40 px-3 py-1 rounded-full border border-emerald-500/20">
-                  Now Open for Walkthroughs
+                <span className="text-xs font-mono text-emerald-400 bg-emerald-950/40 px-3 py-1 rounded-full border border-emerald-500/20 group-hover/loc:border-emerald-500/50">
+                  Open in Google Maps ↗
                 </span>
-              </div>
+              </a>
             </div>
           </div>
         </div>

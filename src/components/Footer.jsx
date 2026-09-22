@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Mail, Phone, MapPin, Clock, MessageSquare, ShieldCheck, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Phone, MapPin, Clock, MessageSquare, ShieldCheck, Sparkles } from 'lucide-react';
 import { BRAND, SERVICES } from '../data/siteData';
 
 export default function Footer() {
@@ -66,22 +66,31 @@ export default function Footer() {
               Studio & Contact
             </h4>
             <div className="space-y-3.5 text-xs text-neutral-300">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5" />
-                <span>
-                  <strong>Trade House Experience Studio</strong><br />
-                  39-2435/A,39-2435/A1, IGS Square, South Janatha Road, Palarivattom, Kochi, Ernakulam, Kerala , 682025
+              <a
+                href={BRAND.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-3 hover:text-luxe-gold transition-colors"
+                title="Open Trade House in Google Maps"
+              >
+                <MapPin className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <span className="group-hover:text-neutral-200 transition-colors">
+                  <strong className="text-white group-hover:text-luxe-gold transition-colors inline-flex items-center gap-1">
+                    Trade House Experience Studio
+                    <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-luxe-gold transition-opacity" />
+                  </strong>
+                  <br />
+                  <span className="text-neutral-400 group-hover:text-neutral-300">
+                    {BRAND.address}
+                  </span>
+                  <span className="text-[11px] text-luxe-gold/90 group-hover:text-luxe-gold flex items-center gap-1 mt-1 font-mono uppercase tracking-wider underline">
+                    View on Google Maps →
+                  </span>
                 </span>
-              </div>
+              </a>
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-luxe-gold shrink-0" />
                 <span>{BRAND.openingHours}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-luxe-gold shrink-0" />
-                <a href={`mailto:${BRAND.email}`} className="hover:text-luxe-gold transition-colors">
-                  {BRAND.email}
-                </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-luxe-gold shrink-0" />
@@ -110,7 +119,14 @@ export default function Footer() {
             <span>•</span>
             <span>CRI 97+ Standard</span>
             <span>•</span>
-            <Link to="/contact" className="hover:text-luxe-gold transition-colors">Studio Location</Link>
+            <a
+              href={BRAND.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-luxe-gold transition-colors inline-flex items-center gap-1"
+            >
+              Studio Location <ArrowUpRight className="w-3 h-3" />
+            </a>
           </div>
         </div>
       </div>

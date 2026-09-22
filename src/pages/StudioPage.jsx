@@ -2,7 +2,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Clock,
-  Mail,
   MapPin,
   MessageSquare,
   Phone,
@@ -157,7 +156,17 @@ export default function StudioPage() {
               <span className="text-xs uppercase tracking-[0.25em] text-luxe-gold font-mono">
                 Studio Location
               </span>
-              <h2 className="font-serif text-3xl text-white">Kalloor, Kochi</h2>
+              <div className="flex items-center gap-3 flex-wrap">
+                <h2 className="font-serif text-3xl text-white">Kalloor, Kochi</h2>
+                <a
+                  href={BRAND.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-luxe-gold hover:bg-luxe-gold/10 hover:border-luxe-gold/40 transition-all"
+                >
+                  <MapPin className="w-3 h-3 text-luxe-gold" /> Open Google Maps
+                </a>
+              </div>
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
                 Conveniently situated in Kalloor with dedicated client parking
                 and private architectural consultation suites.
@@ -165,26 +174,36 @@ export default function StudioPage() {
             </div>
 
             <div className="p-6 rounded-3xl bg-obsidian-900 border border-white/10 space-y-4 text-xs">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5" />
+              <a
+                href={BRAND.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-3 hover:text-luxe-gold transition-colors text-left"
+                title="Open location in Google Maps"
+              >
+                <MapPin className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span>
-                  <strong>Trade House Studio</strong>
-                  <br />
-                  [SHOWROOM ADDRESS: 39-2435/A,39-2435/A1, IGS Square, South
-                  Janatha Road, Palarivattom, Kochi, Ernakulam, Kerala , 682025]
+                  <strong className="text-white group-hover:text-luxe-gold transition-colors flex items-center gap-1">
+                    Trade House Studio
+                    <ArrowRight className="w-3.5 h-3.5 text-luxe-gold opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </strong>
+                  <span className="text-neutral-400 group-hover:text-neutral-300 transition-colors block">
+                    {BRAND.address}
+                  </span>
+                  <span className="text-[11px] text-luxe-gold/90 group-hover:text-luxe-gold flex items-center gap-1 mt-1 font-mono uppercase tracking-wider underline">
+                    View on Google Maps →
+                  </span>
                 </span>
-              </div>
+              </a>
               <div className="flex items-center gap-3">
                 <Clock className="w-4 h-4 text-luxe-gold shrink-0" />
                 <span>{BRAND.openingHours}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-luxe-gold shrink-0" />
-                <span>{BRAND.phone}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-luxe-gold shrink-0" />
-                <span>{BRAND.email}</span>
+                <a href={`tel:${BRAND.phone}`} className="hover:text-luxe-gold transition-colors">
+                  {BRAND.phone}
+                </a>
               </div>
             </div>
 

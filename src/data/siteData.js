@@ -8,13 +8,13 @@ export const BRAND = {
   city: "Kochi",
   region: "Kerala, India",
   phone: "+91 77366 36427",
-  email: "connect@tradehouse.lighting",
   whatsapp: "+91 77366 36427",
   whatsappUrl:
     "https://wa.me/917736636427?text=Hello%20Trade%20House%2C%20I%20would%20like%20to%20discuss%20a%20lighting%20project.",
+  mapUrl: "https://maps.app.goo.gl/ZKsyjmN34kgXBqWK9",
   openingHours: "Mon – Sat: 10:00 AM – 8:00 PM",
   address:
-    "Trade House Experience Studio, 39-2435/A,39-2435/A1, IGS Square, South Janatha Road, Palarivattom, Kochi, Ernakulam, Kerala , 682025",
+    "39-2435/A, 39-2435/A1, IGS Square, South Janatha Road, Palarivattom, Kochi, Ernakulam, Kerala, 682025",
 };
 
 export const SERVICE_CATEGORIES = [
