@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, ArrowRight, CheckCircle2, SlidersHorizontal, Eye } from 'lucide-react';
+import { trackInquiryClick } from '../utils/analytics';
 
 export default function LightingDiscoveryPage() {
   const [activeCategory, setActiveCategory] = useState('architectural');
@@ -229,6 +230,14 @@ export default function LightingDiscoveryPage() {
               <div className="pt-2 flex items-center justify-between">
                 <Link
                   to="/start-a-project"
+                  onClick={() => {
+                    trackInquiryClick({
+                      link_location: 'lighting_discovery_fixtures',
+                      button_text: 'Request Specification Sheet',
+                      fixture_name: fix.name,
+                      destination: '/start-a-project',
+                    });
+                  }}
                   className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-luxe-gold hover:text-white transition-colors"
                 >
                   Request Specification Sheet <ArrowRight className="w-4 h-4" />

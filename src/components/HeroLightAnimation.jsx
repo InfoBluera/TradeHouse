@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, ChevronDown } from 'lucide-react';
+import { trackInquiryClick } from '../utils/analytics';
 
 export default function HeroLightAnimation() {
   const [lightIntensity, setLightIntensity] = useState(80);
@@ -82,6 +83,13 @@ export default function HeroLightAnimation() {
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
           <Link
             to="/start-a-project"
+            onClick={() => {
+              trackInquiryClick({
+                link_location: 'hero',
+                button_text: 'Start Your Project',
+                destination: '/start-a-project',
+              });
+            }}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-luxe-gold to-luxe-bronze text-obsidian-950 text-xs font-semibold uppercase tracking-[0.14em] shadow-md shadow-black/40 hover:brightness-105 active:scale-[0.98] transition-all duration-200"
           >
             <span>Start Your Project</span>

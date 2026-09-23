@@ -17,6 +17,11 @@ import {
   MessageSquare 
 } from 'lucide-react';
 import { BRAND } from '../data/siteData';
+import {
+  trackInquiryClick,
+  trackWhatsAppClick,
+  trackInquirySubmit,
+} from '../utils/analytics';
 
 export default function StartAProjectPage() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -95,6 +100,14 @@ export default function StartAProjectPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    trackInquirySubmit({
+      link_location: 'start_a_project_wizard',
+      form_name: 'Start a Project Wizard',
+      project_type: projectType,
+      project_scale: projectScale,
+      timeline: timeline,
+      is_professional: clientDetails.isArchitectOrDesigner,
+    });
     setIsSubmitted(true);
   };
 
@@ -177,6 +190,13 @@ export default function StartAProjectPage() {
                   href={generateWhatsAppMessage()}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    trackWhatsAppClick({
+                      link_location: 'start_a_project_post_submit',
+                      button_text: 'Send directly via WhatsApp',
+                      destination: 'whatsapp',
+                    });
+                  }}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20"
                 >
                   <MessageSquare className="w-4 h-4" /> Send directly via WhatsApp
@@ -497,6 +517,13 @@ export default function StartAProjectPage() {
                 ) : (
                   <button
                     type="submit"
+                    onClick={() => {
+                      trackInquiryClick({
+                        link_location: 'start_a_project_wizard',
+                        button_text: "Let's Design Your Light",
+                        destination: 'form',
+                      });
+                    }}
                     className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-luxe-gold to-luxe-bronze text-obsidian-950 text-xs font-bold uppercase tracking-widest hover:brightness-105 active:scale-[0.98] transition-all shadow-lg shadow-black/40"
                   >
                     <span>Let's Design Your Light</span>

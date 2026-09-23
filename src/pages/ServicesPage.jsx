@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES, SERVICE_CATEGORIES, PROCESS_STEPS } from '../data/siteData';
+import { trackInquiryClick } from '../utils/analytics';
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -189,6 +190,14 @@ export default function ServicesPage() {
                   <div className="pt-4 flex flex-wrap gap-4">
                     <Link
                       to="/start-a-project"
+                      onClick={() => {
+                        trackInquiryClick({
+                          link_location: 'services_list',
+                          button_text: 'Enquire for This Service',
+                          service_title: service.title,
+                          destination: '/start-a-project',
+                        });
+                      }}
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold uppercase tracking-wider hover:bg-luxe-champagne transition-all shadow-lg shadow-luxe-gold/20"
                     >
                       Enquire for This Service <ArrowRight className="w-3.5 h-3.5" />
@@ -230,6 +239,13 @@ export default function ServicesPage() {
           <div className="pt-4">
             <Link
               to="/start-a-project"
+              onClick={() => {
+                trackInquiryClick({
+                  link_location: 'services_bottom_cta',
+                  button_text: 'Start Your Project Consultation',
+                  destination: '/start-a-project',
+                });
+              }}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-luxe-gold to-luxe-bronze text-obsidian-950 text-xs font-bold uppercase tracking-widest shadow-xl shadow-luxe-gold/20 hover:scale-105 transition-all"
             >
               Start Your Project Consultation <ArrowRight className="w-4 h-4" />

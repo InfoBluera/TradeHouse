@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Phone, MapPin, Clock, MessageSquare, ShieldCheck, Sparkles } from 'lucide-react';
 import { BRAND, SERVICES } from '../data/siteData';
+import { trackInquiryClick, trackWhatsAppClick, trackPhoneClick, trackMapClick } from '../utils/analytics';
 
 export default function Footer() {
   return (
@@ -30,6 +31,13 @@ export default function Footer() {
             <div className="flex flex-wrap gap-4 pt-2">
               <Link
                 to="/start-a-project"
+                onClick={() => {
+                  trackInquiryClick({
+                    link_location: 'footer',
+                    button_text: 'Start Your Project',
+                    destination: '/start-a-project',
+                  });
+                }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-semibold uppercase tracking-wider hover:bg-luxe-champagne transition-all shadow-lg shadow-luxe-gold/15"
               >
                 Start Your Project <ArrowUpRight className="w-4 h-4" />
@@ -38,6 +46,13 @@ export default function Footer() {
                 href={BRAND.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackWhatsAppClick({
+                    link_location: 'footer',
+                    button_text: 'WhatsApp Studio',
+                    destination: 'whatsapp',
+                  });
+                }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-neutral-200 hover:text-luxe-gold hover:border-luxe-gold/30 transition-all"
               >
                 <MessageSquare className="w-3.5 h-3.5 text-emerald-400" /> WhatsApp Studio
@@ -70,6 +85,13 @@ export default function Footer() {
                 href={BRAND.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackMapClick({
+                    link_location: 'footer_address',
+                    button_text: 'View on Google Maps',
+                    destination: 'google_maps',
+                  });
+                }}
                 className="group flex items-start gap-3 hover:text-luxe-gold transition-colors"
                 title="Open Trade House in Google Maps"
               >
@@ -94,7 +116,17 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-luxe-gold shrink-0" />
-                <a href={`tel:${BRAND.phone}`} className="hover:text-luxe-gold transition-colors">
+                <a
+                  href={`tel:${BRAND.phone}`}
+                  onClick={() => {
+                    trackPhoneClick({
+                      link_location: 'footer',
+                      button_text: BRAND.phone,
+                      destination: 'phone',
+                    });
+                  }}
+                  className="hover:text-luxe-gold transition-colors"
+                >
                   {BRAND.phone}
                 </a>
               </div>
@@ -123,6 +155,13 @@ export default function Footer() {
               href={BRAND.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackMapClick({
+                  link_location: 'footer_bottom',
+                  button_text: 'Studio Location',
+                  destination: 'google_maps',
+                });
+              }}
               className="hover:text-luxe-gold transition-colors inline-flex items-center gap-1"
             >
               Studio Location <ArrowUpRight className="w-3 h-3" />

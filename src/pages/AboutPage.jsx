@@ -15,6 +15,7 @@ import {
   SunMedium
 } from 'lucide-react';
 import { TRUST_METRICS, BRAND } from '../data/siteData';
+import { trackInquiryClick, trackMapClick } from '../utils/analytics';
 
 export default function AboutPage() {
   const milestones = [
@@ -240,6 +241,13 @@ export default function AboutPage() {
                 </Link>
                 <Link
                   to="/start-a-project"
+                  onClick={() => {
+                    trackInquiryClick({
+                      link_location: 'about_experience_center',
+                      button_text: 'Consult Our Designers',
+                      destination: '/start-a-project',
+                    });
+                  }}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/15 text-xs font-medium uppercase tracking-wider transition-all"
                 >
                   Consult Our Designers
@@ -258,6 +266,13 @@ export default function AboutPage() {
                 href={BRAND.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackMapClick({
+                    link_location: 'about_location_card',
+                    button_text: 'Open in Google Maps',
+                    destination: 'google_maps',
+                  });
+                }}
                 className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-obsidian-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between hover:border-luxe-gold/50 transition-all group/loc"
                 title="Open location in Google Maps"
               >
@@ -356,6 +371,13 @@ export default function AboutPage() {
             </Link>
             <Link
               to="/start-a-project"
+              onClick={() => {
+                trackInquiryClick({
+                  link_location: 'about_bottom_cta',
+                  button_text: 'Start a Project',
+                  destination: '/start-a-project',
+                });
+              }}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/15 text-xs font-semibold uppercase tracking-wider transition-all"
             >
               Start a Project

@@ -15,6 +15,7 @@ import {
   Cpu,
   Fingerprint
 } from 'lucide-react';
+import { trackInquiryClick } from '../utils/analytics';
 
 export default function SmartLightingPage() {
   const ecosystems = [
@@ -131,6 +132,13 @@ export default function SmartLightingPage() {
               <div className="pt-2">
                 <Link
                   to="/start-a-project"
+                  onClick={() => {
+                    trackInquiryClick({
+                      link_location: 'smart_lighting_keypads',
+                      button_text: 'Plan Smart Lighting For Your Home',
+                      destination: '/start-a-project',
+                    });
+                  }}
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold uppercase tracking-wider hover:bg-luxe-champagne transition-all"
                 >
                   Plan Smart Lighting For Your Home <ArrowRight className="w-4 h-4" />

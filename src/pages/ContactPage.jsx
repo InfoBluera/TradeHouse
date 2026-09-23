@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { BRAND } from '../data/siteData';
 import { MapPin, Phone, Clock, MessageSquare, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import {
+  trackInquiryClick,
+  trackMapClick,
+  trackPhoneClick,
+  trackWhatsAppClick,
+  trackInquirySubmit,
+} from '../utils/analytics';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -26,6 +33,11 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    trackInquirySubmit({
+      link_location: 'contact_form',
+      form_name: 'Contact Form Inquiry',
+      inquiry_type: formData.subject,
+    });
     setSubmitted(true);
     const whatsappUrl = getWhatsAppUrl();
     try {
@@ -67,6 +79,13 @@ export default function ContactPage() {
                   href={BRAND.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    trackMapClick({
+                      link_location: 'contact_location_card',
+                      button_text: 'View on Google Maps',
+                      destination: 'google_maps',
+                    });
+                  }}
                   className="group flex items-start gap-3.5 hover:text-luxe-gold transition-colors"
                   title="Open in Google Maps"
                 >
@@ -99,7 +118,17 @@ export default function ContactPage() {
                   <Phone className="w-4 h-4 text-luxe-gold shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white block text-sm">Studio Phone</strong>
-                    <a href={`tel:${BRAND.phone}`} className="text-neutral-300 hover:text-luxe-gold transition-colors">
+                    <a
+                      href={`tel:${BRAND.phone}`}
+                      onClick={() => {
+                        trackPhoneClick({
+                          link_location: 'contact_phone',
+                          button_text: BRAND.phone,
+                          destination: 'phone',
+                        });
+                      }}
+                      className="text-neutral-300 hover:text-luxe-gold transition-colors"
+                    >
                       {BRAND.phone}
                     </a>
                   </div>
@@ -122,6 +151,13 @@ export default function ContactPage() {
                 href={BRAND.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackWhatsAppClick({
+                    link_location: 'contact_whatsapp_card',
+                    button_text: 'Open WhatsApp Concierge',
+                    destination: 'whatsapp',
+                  });
+                }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20"
               >
                 Open WhatsApp Concierge <ArrowRight className="w-4 h-4" />
@@ -172,6 +208,13 @@ export default function ContactPage() {
                     href={getWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => {
+                      trackWhatsAppClick({
+                        link_location: 'contact_post_submit',
+                        button_text: 'Continue in WhatsApp',
+                        destination: 'whatsapp',
+                      });
+                    }}
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20"
                   >
                     <MessageSquare className="w-4 h-4" /> Continue in WhatsApp
@@ -270,6 +313,13 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
+                  onClick={() => {
+                    trackInquiryClick({
+                      link_location: 'contact_form',
+                      button_text: 'Submit Inquiry',
+                      destination: 'form',
+                    });
+                  }}
                   className="w-full py-4 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold uppercase tracking-widest hover:bg-luxe-champagne transition-all shadow-lg shadow-luxe-gold/25 flex items-center justify-center gap-2"
                 >
                   <span>Submit Inquiry</span>

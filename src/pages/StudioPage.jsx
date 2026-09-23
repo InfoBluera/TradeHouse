@@ -9,6 +9,13 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { BRAND } from "../data/siteData";
+import {
+  trackInquiryClick,
+  trackMapClick,
+  trackPhoneClick,
+  trackWhatsAppClick,
+  trackInquirySubmit,
+} from "../utils/analytics";
 
 export default function StudioPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -23,6 +30,12 @@ export default function StudioPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    trackInquirySubmit({
+      link_location: "studio_walkthrough_form",
+      form_name: "Studio Walkthrough Request",
+      project_type: formData.projectType,
+      preferred_date: formData.preferredDate || "Not specified",
+    });
     setFormSubmitted(true);
   };
 
@@ -162,6 +175,13 @@ export default function StudioPage() {
                   href={BRAND.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    trackMapClick({
+                      link_location: 'studio_header',
+                      button_text: 'Open Google Maps',
+                      destination: 'google_maps',
+                    });
+                  }}
                   className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-luxe-gold hover:bg-luxe-gold/10 hover:border-luxe-gold/40 transition-all"
                 >
                   <MapPin className="w-3 h-3 text-luxe-gold" /> Open Google Maps
@@ -178,6 +198,13 @@ export default function StudioPage() {
                 href={BRAND.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackMapClick({
+                    link_location: 'studio_address_card',
+                    button_text: 'View on Google Maps',
+                    destination: 'google_maps',
+                  });
+                }}
                 className="group flex items-start gap-3 hover:text-luxe-gold transition-colors text-left"
                 title="Open location in Google Maps"
               >
@@ -201,7 +228,17 @@ export default function StudioPage() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-luxe-gold shrink-0" />
-                <a href={`tel:${BRAND.phone}`} className="hover:text-luxe-gold transition-colors">
+                <a
+                  href={`tel:${BRAND.phone}`}
+                  onClick={() => {
+                    trackPhoneClick({
+                      link_location: 'studio_contact_card',
+                      button_text: BRAND.phone,
+                      destination: 'phone',
+                    });
+                  }}
+                  className="hover:text-luxe-gold transition-colors"
+                >
                   {BRAND.phone}
                 </a>
               </div>
@@ -211,6 +248,13 @@ export default function StudioPage() {
               href={BRAND.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackWhatsAppClick({
+                  link_location: 'studio_whatsapp_card',
+                  button_text: 'WhatsApp Studio Concierge',
+                  destination: 'whatsapp',
+                });
+              }}
               className="w-full flex items-center justify-center gap-2 p-4 rounded-full bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 text-xs font-semibold uppercase tracking-wider hover:bg-emerald-500/20 transition-all"
             >
               <MessageSquare className="w-4 h-4" /> WhatsApp Studio Concierge
@@ -356,6 +400,13 @@ export default function StudioPage() {
 
                 <button
                   type="submit"
+                  onClick={() => {
+                    trackInquiryClick({
+                      link_location: 'studio_walkthrough_form',
+                      button_text: 'Confirm Studio Walkthrough Request',
+                      destination: 'form',
+                    });
+                  }}
                   className="w-full py-4 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold uppercase tracking-widest hover:bg-luxe-champagne transition-all shadow-lg shadow-luxe-gold/25 flex items-center justify-center gap-2"
                 >
                   <span>Confirm Studio Walkthrough Request</span>

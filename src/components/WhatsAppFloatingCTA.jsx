@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageSquare } from 'lucide-react';
 import { BRAND } from '../data/siteData';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 export default function WhatsAppFloatingCTA() {
   return (
@@ -8,6 +9,13 @@ export default function WhatsAppFloatingCTA() {
       href={BRAND.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => {
+        trackWhatsAppClick({
+          link_location: 'floating_button',
+          button_text: 'Chat with Trade House',
+          destination: 'whatsapp',
+        });
+      }}
       className="fixed bottom-6 right-6 z-40 group flex items-center gap-3 px-4 py-3 rounded-full bg-obsidian-900/90 hover:bg-obsidian-850 border border-emerald-500/40 text-white backdrop-blur-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:border-emerald-400"
       aria-label="Chat with Trade House Lighting Studio on WhatsApp"
     >

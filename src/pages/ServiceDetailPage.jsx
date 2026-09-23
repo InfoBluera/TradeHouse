@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { SERVICES, PROJECTS } from '../data/siteData';
 import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, Layers, ShieldCheck, Phone, ArrowUpRight } from 'lucide-react';
+import { trackInquiryClick } from '../utils/analytics';
 
 export default function ServiceDetailPage() {
   const { slug } = useParams();
@@ -103,6 +104,14 @@ export default function ServiceDetailPage() {
 
               <Link
                 to="/start-a-project"
+                onClick={() => {
+                  trackInquiryClick({
+                    link_location: 'service_detail_sidebar',
+                    button_text: `Inquire for ${service.title}`,
+                    service_title: service.title,
+                    destination: '/start-a-project',
+                  });
+                }}
                 className="w-full inline-flex items-center justify-center gap-2 py-4 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold uppercase tracking-wider hover:bg-luxe-champagne transition-all shadow-lg shadow-luxe-gold/20"
               >
                 Inquire for {service.title} <ArrowRight className="w-4 h-4" />
@@ -113,7 +122,17 @@ export default function ServiceDetailPage() {
             <div className="p-6 rounded-3xl bg-white/5 border border-white/5 text-xs space-y-2">
               <span className="text-luxe-champagne font-semibold block">Need immediate advice?</span>
               <p className="text-neutral-400">Speak directly with our lighting engineering team in Kalloor, Kochi.</p>
-              <Link to="/contact" className="text-luxe-gold inline-flex items-center gap-1 font-mono pt-1 hover:underline">
+              <Link
+                to="/contact"
+                onClick={() => {
+                  trackInquiryClick({
+                    link_location: 'service_detail_support',
+                    button_text: 'Contact Studio',
+                    destination: '/contact',
+                  });
+                }}
+                className="text-luxe-gold inline-flex items-center gap-1 font-mono pt-1 hover:underline"
+              >
                 Contact Studio &rarr;
               </Link>
             </div>

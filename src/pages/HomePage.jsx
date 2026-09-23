@@ -22,6 +22,7 @@ import SmartSceneSimulator from '../components/SmartSceneSimulator';
 import SpaceExplorer from '../components/SpaceExplorer';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import { SERVICES, PROJECTS, PROCESS_STEPS, TESTIMONIALS, TRUST_METRICS, BRAND } from '../data/siteData';
+import { trackInquiryClick } from '../utils/analytics';
 
 export default function HomePage() {
   return (
@@ -421,6 +422,13 @@ export default function HomePage() {
                 </Link>
                 <Link
                   to="/contact"
+                  onClick={() => {
+                    trackInquiryClick({
+                      link_location: 'homepage_studio_preview',
+                      button_text: 'Book a Consultation',
+                      destination: '/contact',
+                    });
+                  }}
                   className="px-6 py-3.5 rounded-full bg-white/5 border border-white/15 text-xs font-medium uppercase tracking-widest text-neutral-200 hover:text-luxe-gold hover:border-luxe-gold/40 transition-all"
                 >
                   Book a Consultation
@@ -509,6 +517,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link
               to="/start-a-project"
+              onClick={() => {
+                trackInquiryClick({
+                  link_location: 'homepage_final_cta',
+                  button_text: 'Start Your Project',
+                  destination: '/start-a-project',
+                });
+              }}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-3.5 rounded-full bg-gradient-to-r from-luxe-gold to-luxe-bronze text-obsidian-950 text-xs font-semibold uppercase tracking-[0.14em] shadow-lg shadow-black/40 hover:brightness-105 active:scale-[0.98] transition-all duration-200"
             >
               <span>Start Your Project</span>

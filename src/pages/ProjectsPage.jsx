@@ -4,6 +4,7 @@ import { REAL_PROJECTS, PROJECT_CATEGORIES } from '../data/projectsData';
 import ProjectCard from '../components/projects/ProjectCard';
 import ProjectFilter from '../components/projects/ProjectFilter';
 import { Search, Sparkles, ArrowRight, Lightbulb, MapPin, Compass, ShieldCheck } from 'lucide-react';
+import { trackInquiryClick } from '../utils/analytics';
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -176,6 +177,13 @@ export default function ProjectsPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link
                 to="/start-a-project"
+                onClick={() => {
+                  trackInquiryClick({
+                    link_location: 'projects_closing_cta',
+                    button_text: 'Initiate Your Project',
+                    destination: '/start-a-project',
+                  });
+                }}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-luxe-gold to-luxe-bronze text-obsidian-950 text-xs font-bold uppercase tracking-widest hover:brightness-105 transition-all shadow-lg shadow-black/40"
               >
                 <span>Initiate Your Project</span>

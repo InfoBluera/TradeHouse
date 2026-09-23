@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SPACES_GUIDE } from '../data/siteData';
 import { Sparkles, CheckCircle2, ArrowRight, Lightbulb, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { trackInquiryClick } from '../utils/analytics';
 
 export default function SpaceExplorer() {
   const [activeSpace, setActiveSpace] = useState(SPACES_GUIDE[0]);
@@ -25,6 +26,13 @@ export default function SpaceExplorer() {
 
           <Link
             to="/start-a-project"
+            onClick={() => {
+              trackInquiryClick({
+                link_location: 'space_explorer',
+                button_text: 'Request Space Consultation',
+                destination: '/start-a-project',
+              });
+            }}
             className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-luxe-gold hover:text-white transition-colors self-start md:self-auto"
           >
             Request Space Consultation <ArrowRight className="w-4 h-4" />

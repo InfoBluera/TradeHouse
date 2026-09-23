@@ -12,6 +12,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { trackInquiryClick } from '../utils/analytics';
 
 export default function SmartSceneSimulator() {
   // Light engine type: 'smd' | 'cob'
@@ -583,6 +584,13 @@ export default function SmartSceneSimulator() {
               <div className="pt-2">
                 <Link
                   to="/contact"
+                  onClick={() => {
+                    trackInquiryClick({
+                      link_location: 'smart_scene_simulator',
+                      button_text: 'Request Photometric Study',
+                      destination: '/contact',
+                    });
+                  }}
                   className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-luxe-gold to-luxe-champagne text-obsidian-950 text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-luxe-gold/20"
                 >
                   <span>Request Photometric Study</span>

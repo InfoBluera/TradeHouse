@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { BRAND } from '../data/siteData';
+import { trackInquiryClick, trackMapClick, trackWhatsAppClick } from '../utils/analytics';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -96,6 +97,13 @@ export default function Header() {
               {/* Contact Button */}
               <Link
                 to="/contact"
+                onClick={() => {
+                  trackInquiryClick({
+                    link_location: 'header',
+                    button_text: 'Contact',
+                    destination: '/contact',
+                  });
+                }}
                 className={`h-9 px-3.5 xl:px-4 rounded-full border text-[11.5px] xl:text-[12px] font-medium tracking-[0.11em] xl:tracking-[0.14em] uppercase transition-all duration-200 inline-flex items-center justify-center whitespace-nowrap ${
                   isContactActive
                     ? 'border-luxe-gold text-luxe-gold bg-luxe-gold/10'
@@ -108,6 +116,13 @@ export default function Header() {
               {/* Start Your Project Button */}
               <Link
                 to="/start-a-project"
+                onClick={() => {
+                  trackInquiryClick({
+                    link_location: 'header',
+                    button_text: 'Start Your Project',
+                    destination: '/start-a-project',
+                  });
+                }}
                 className="h-9 px-4 xl:px-5 rounded-full bg-gradient-to-r from-luxe-gold to-luxe-bronze text-obsidian-950 text-[11.5px] xl:text-[12px] font-semibold tracking-[0.11em] xl:tracking-[0.14em] uppercase hover:brightness-105 active:scale-[0.98] transition-all duration-200 inline-flex items-center justify-center gap-1.5 shadow-sm shadow-black/30 whitespace-nowrap"
               >
                 <span>Start Your Project</span>
@@ -120,6 +135,13 @@ export default function Header() {
           <div className="flex items-center gap-2 sm:gap-2.5 lg:hidden shrink-0">
             <Link
               to="/contact"
+              onClick={() => {
+                trackInquiryClick({
+                  link_location: 'header_mobile',
+                  button_text: 'Contact',
+                  destination: '/contact',
+                });
+              }}
               className={`h-8 px-3 rounded-full border text-[10.5px] font-medium tracking-[0.1em] uppercase transition-all inline-flex items-center justify-center ${
                 isContactActive
                   ? 'border-luxe-gold text-luxe-gold bg-luxe-gold/10'
@@ -130,6 +152,13 @@ export default function Header() {
             </Link>
             <Link
               to="/start-a-project"
+              onClick={() => {
+                trackInquiryClick({
+                  link_location: 'header_mobile',
+                  button_text: 'Start',
+                  destination: '/start-a-project',
+                });
+              }}
               className="h-8 px-3.5 rounded-full bg-luxe-gold text-obsidian-950 text-[10.5px] font-semibold tracking-[0.1em] uppercase inline-flex items-center justify-center shadow-sm whitespace-nowrap"
             >
               Start
@@ -170,6 +199,13 @@ export default function Header() {
               })}
               <Link
                 to="/contact"
+                onClick={() => {
+                  trackInquiryClick({
+                    link_location: 'header_mobile_menu',
+                    button_text: 'Contact Studio',
+                    destination: '/contact',
+                  });
+                }}
                 className={`flex items-center justify-between py-3 border-b border-white/5 text-xs tracking-[0.14em] uppercase transition-colors ${
                   isContactActive ? 'text-luxe-gold font-semibold' : 'text-neutral-300 hover:text-white'
                 }`}
@@ -183,6 +219,13 @@ export default function Header() {
           <div className="pt-6 space-y-3.5">
             <Link
               to="/start-a-project"
+              onClick={() => {
+                trackInquiryClick({
+                  link_location: 'header_mobile_menu',
+                  button_text: 'Start a Project',
+                  destination: '/start-a-project',
+                });
+              }}
               className="w-full h-11 flex items-center justify-center gap-2 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold tracking-[0.14em] uppercase shadow-md shadow-black/40"
             >
               Start a Project
@@ -193,13 +236,32 @@ export default function Header() {
                 href={BRAND.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackMapClick({
+                    link_location: 'header_mobile_menu',
+                    button_text: BRAND.location,
+                    destination: 'google_maps',
+                  });
+                }}
                 className="text-[11px] hover:text-luxe-gold transition-colors inline-flex items-center gap-1"
                 title="Open Trade House on Google Maps"
               >
                 <span>{BRAND.location}</span>
                 <span className="text-luxe-gold text-[10px]">↗</span>
               </a>
-              <a href={BRAND.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-luxe-gold text-[11px] hover:underline font-mono">
+              <a
+                href={BRAND.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  trackWhatsAppClick({
+                    link_location: 'header_mobile_menu',
+                    button_text: 'WhatsApp Studio',
+                    destination: 'whatsapp',
+                  });
+                }}
+                className="text-luxe-gold text-[11px] hover:underline font-mono"
+              >
                 WhatsApp Studio
               </a>
             </div>
