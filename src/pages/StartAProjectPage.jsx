@@ -6,13 +6,13 @@ import {
   CheckCircle2,
   Home,
   MapPin,
-  MessageSquare,
   Sliders,
   Sparkles,
   Store,
   UtensilsCrossed,
 } from "lucide-react";
 import { useState } from "react";
+import { BRAND } from "../data/siteData";
 import {
   trackInquiryClick,
   trackInquirySubmit,
@@ -21,7 +21,6 @@ import {
 
 export default function StartAProjectPage() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Form State
   const [projectType, setProjectType] = useState("Luxury Villa");
@@ -119,6 +118,27 @@ export default function StartAProjectPage() {
     }
   };
 
+  // Generate WhatsApp prefilled message string
+  const generateWhatsAppMessage = () => {
+    const whatsappNumber =
+      BRAND?.whatsapp?.replace(/[^0-9]/g, "") || "917736636427";
+    const professionalTag = clientDetails.isArchitectOrDesigner
+      ? `\n*Professional:* Architect / Designer / Contractor`
+      : "";
+    const text =
+      `*New Project Enquiry — Trade House Lighting Studio*\n\n` +
+      `*Space:* ${projectType}\n` +
+      `*Services:* ${servicesNeeded.length > 0 ? servicesNeeded.join(", ") : "None"}\n` +
+      `*Location:* ${location}\n` +
+      `*Scale:* ${projectScale}\n` +
+      `*Timeline:* ${timeline}\n` +
+      `*Client:* ${clientDetails.name} (${clientDetails.phone})\n` +
+      `*Email:* ${clientDetails.email}\n` +
+      `*Brief:* ${clientDetails.message || "None"}` +
+      professionalTag;
+    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     trackInquirySubmit({
@@ -129,22 +149,21 @@ export default function StartAProjectPage() {
       timeline: timeline,
       is_professional: clientDetails.isArchitectOrDesigner,
     });
-    setIsSubmitted(true);
-  };
+    trackWhatsAppClick({
+      link_location: "start_a_project_wizard",
+      button_text: "Submit Your Enquiry",
+      destination: "whatsapp",
+    });
 
-  // Generate WhatsApp prefilled message string
-  const generateWhatsAppMessage = () => {
-    const text =
-      `*New Project Enquiry — Trade House Lighting Studio*\n\n` +
-      `*Space:* ${projectType}\n` +
-      `*Services:* ${servicesNeeded.join(", ")}\n` +
-      `*Location:* ${location}\n` +
-      `*Scale:* ${projectScale}\n` +
-      `*Timeline:* ${timeline}\n` +
-      `*Client:* ${clientDetails.name} (${clientDetails.phone})\n` +
-      `*Email:* ${clientDetails.email}\n` +
-      `*Brief:* ${clientDetails.message || "None"}`;
-    return `https://wa.me/917736636427?text=${encodeURIComponent(text)}`;
+    const whatsappUrl = generateWhatsAppMessage();
+    try {
+      const win = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      if (!win || win.closed || typeof win.closed === "undefined") {
+        window.location.href = whatsappUrl;
+      }
+    } catch {
+      window.location.href = whatsappUrl;
+    }
   };
 
   return (
@@ -177,75 +196,7 @@ export default function StartAProjectPage() {
 
         {/* Wizard Card Container */}
         <div className="p-8 sm:p-14 rounded-3xl bg-obsidian-900/80 border border-white/10 shadow-2xl backdrop-blur-xl">
-          {isSubmitted ? (
-            /* Success State */
-            <div className="text-center py-12 space-y-6">
-              <div className="w-16 h-16 rounded-full bg-luxe-gold/20 border-2 border-luxe-gold flex items-center justify-center mx-auto text-luxe-gold shadow-md shadow-black/40">
-                <CheckCircle2 className="w-10 h-10" />
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl text-white">
-                Project Scope Synthesized
-              </h2>
-              <p className="text-xs sm:text-sm text-neutral-300 max-w-lg mx-auto font-light leading-relaxed">
-                Thank you, <strong>{clientDetails.name}</strong>. Our senior
-                lighting design team in palarivattom, Kochi has logged your
-                enquiry for your <strong>{projectType}</strong> in{" "}
-                <strong>{location}</strong>.
-              </p>
-
-              {/* Summary synthesis card */}
-              <div className="p-6 rounded-2xl bg-obsidian-950 border border-white/10 text-left max-w-md mx-auto text-xs space-y-2 font-mono">
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span className="text-neutral-400">Typology:</span>
-                  <span className="text-white">{projectType}</span>
-                </div>
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span className="text-neutral-400">Scale:</span>
-                  <span className="text-white">{projectScale}</span>
-                </div>
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span className="text-neutral-400">Timeline:</span>
-                  <span className="text-luxe-gold">{timeline}</span>
-                </div>
-                <div className="flex justify-between pt-1">
-                  <span className="text-neutral-400">Services:</span>
-                  <span className="text-white">
-                    {servicesNeeded.length} disciplines selected
-                  </span>
-                </div>
-              </div>
-
-              {/* Direct WhatsApp Instant Dispatch */}
-              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href={generateWhatsAppMessage()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    trackWhatsAppClick({
-                      link_location: "start_a_project_post_submit",
-                      button_text: "Send directly via WhatsApp",
-                      destination: "whatsapp",
-                    });
-                  }}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20"
-                >
-                  <MessageSquare className="w-4 h-4" /> Send directly via
-                  WhatsApp
-                </a>
-                <button
-                  onClick={() => {
-                    setIsSubmitted(false);
-                    setCurrentStep(1);
-                  }}
-                  className="text-xs text-neutral-400 hover:text-white uppercase font-mono tracking-wider underline py-2"
-                >
-                  Start Over
-                </button>
-              </div>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
               {/* STEP 1: Space Type */}
               {currentStep === 1 && (
                 <div className="space-y-6 animate-fade-in">
@@ -374,15 +325,23 @@ export default function StartAProjectPage() {
 
                     <div className="flex flex-wrap gap-2 pt-2">
                       <span className="text-[11px] font-mono text-neutral-500 self-center">
-                        Popular:
+                        Cities / Districts:
                       </span>
                       {[
-                        "palarivattom, Kochi",
-                        "Kadavanthra, Kochi",
-                        "Marine Drive, Kochi",
-                        "Panampilly Nagar",
-                        "Calicut",
-                        "Trivandrum",
+                        "Thiruvananthapuram",
+                        "Kollam",
+                        "Pathanamthitta",
+                        "Alappuzha",
+                        "Kottayam",
+                        "Idukki",
+                        "Ernakulam",
+                        "Thrissur",
+                        "Palakkad",
+                        "Malappuram",
+                        "Kozhikode",
+                        "Wayanad",
+                        "Kannur",
+                        "Kasaragod",
                       ].map((loc) => (
                         <button
                           key={loc}
@@ -621,19 +580,18 @@ export default function StartAProjectPage() {
                     onClick={() => {
                       trackInquiryClick({
                         link_location: "start_a_project_wizard",
-                        button_text: "Let's Design Your Light",
-                        destination: "form",
+                        button_text: "Submit Your Enquiry",
+                        destination: "whatsapp",
                       });
                     }}
                     className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-luxe-gold to-luxe-bronze text-obsidian-950 text-xs font-bold uppercase tracking-widest hover:brightness-105 active:scale-[0.98] transition-all shadow-lg shadow-black/40"
                   >
-                    <span>Let's Design Your Light</span>
+                    <span>Submit Your Enquiry</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 )}
               </div>
             </form>
-          )}
         </div>
       </div>
     </div>
