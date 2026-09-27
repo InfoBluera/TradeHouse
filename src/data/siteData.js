@@ -4,7 +4,7 @@ export const BRAND = {
   name: "TRADE HOUSE",
   tagline: "LIGHTING SPACES. SHAPING EXPERIENCES.",
   subTagline: "Where Light Meets Architecture",
-  location: "Kalloor, Kochi, Kerala",
+  location: "palarivattom, Kochi, Kerala",
   city: "Kochi",
   region: "Kerala, India",
   phone: "+91 77366 36427",

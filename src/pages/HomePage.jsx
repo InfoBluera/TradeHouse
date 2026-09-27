@@ -425,13 +425,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 09: Studio / Showroom Preview in Kalloor, Kochi */}
+      {/* 09: Studio / Showroom Preview in palarivattom, Kochi */}
       <section className="relative py-28 bg-obsidian-900/60 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs uppercase tracking-[0.25em] text-luxe-gold font-mono">
-                Experience Centre • Kalloor, Kochi
+                Experience Centre • palarivattom, Kochi
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-wide leading-tight">
                 Experience Light <br />
@@ -440,7 +440,7 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
-                Step into our architectural lighting laboratory in Kalloor,
+                Step into our architectural lighting laboratory in palarivattom,
                 Kochi. Test beam spreads in our dark simulation studio, evaluate
                 high CRI 98 color rendering on your interior material samples,
                 and explore automated smart scene keypads.
@@ -499,7 +499,7 @@ export default function HomePage() {
                     Location
                   </span>
                   <p className="text-xs font-medium text-white">
-                    Kalloor, Kochi, Kerala 682017
+                    palarivattom, Kochi, Kerala 682017
                   </p>
                 </div>
                 <span className="text-xs font-mono text-emerald-400">

@@ -1,21 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  Sparkles, 
-  ArrowRight, 
-  Compass, 
-  Layers, 
-  MapPin, 
-  Zap, 
-  Eye, 
-  CheckCircle2, 
-  Calendar,
+import {
+  ArrowRight,
   Building2,
+  Eye,
+  Layers,
+  MapPin,
   Sliders,
-  SunMedium
-} from 'lucide-react';
-import { TRUST_METRICS, BRAND } from '../data/siteData';
-import { trackInquiryClick, trackMapClick } from '../utils/analytics';
+  Sparkles,
+  SunMedium,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { BRAND, TRUST_METRICS } from "../data/siteData";
+import { trackInquiryClick, trackMapClick } from "../utils/analytics";
 
 export default function AboutPage() {
   const milestones = [
@@ -25,7 +20,7 @@ export default function AboutPage() {
       location: "Kannur, Kerala",
       title: "Grounded in Electrical Mastery",
       badge: "Foundation",
-      desc: "Our story began nearly two decades ago in Kannur as an ambitious electrical venture. We spent years inside raw walls, mastering the unseen backbone of buildings—conduits, distribution grids, load calculations, and circuitry. This technical rigor gave us an indelible truth: beauty in lighting is worthless without flawless engineering beneath it."
+      desc: "Our story began nearly two decades ago in Kannur as an ambitious electrical venture. We spent years inside raw walls, mastering the unseen backbone of buildings—conduits, distribution grids, load calculations, and circuitry. This technical rigor gave us an indelible truth: beauty in lighting is worthless without flawless engineering beneath it.",
     },
     {
       year: "2021",
@@ -33,7 +28,7 @@ export default function AboutPage() {
       location: "Kannur, Kerala",
       title: "From Conduits to Curated Luminescence",
       badge: "Evolution",
-      desc: "Having mastered the anatomy of electrical power, we took a defining leap—evolving into an exclusive lighting showroom. We rejected the commercial approach of hanging fixtures like generic commodities. Instead, we began curating optical instruments, collaborating with architects, and proving that lighting is not an accessory, but an emotional spatial medium."
+      desc: "Having mastered the anatomy of electrical power, we took a defining leap—evolving into an exclusive lighting showroom. We rejected the commercial approach of hanging fixtures like generic commodities. Instead, we began curating optical instruments, collaborating with architects, and proving that lighting is not an accessory, but an emotional spatial medium.",
     },
     {
       year: "Now",
@@ -41,8 +36,8 @@ export default function AboutPage() {
       location: "Kochi, Kerala",
       title: "The Kochi Lighting Experience Center",
       badge: "New Era",
-      desc: "Today marks our boldest chapter: the launch of our state-of-the-art Lighting Experience Studio in Kalloor, Kochi. Designed as an architectural sensory laboratory, it allows architects, designers, and homeowners to step inside pitch-black simulation rooms, test true-color CRI rendering on natural Kerala materials, and witness how light sculpts architecture in real time."
-    }
+      desc: "Today marks our boldest chapter: the launch of our state-of-the-art Lighting Experience Studio in palarivattom, Kochi. Designed as an architectural sensory laboratory, it allows architects, designers, and homeowners to step inside pitch-black simulation rooms, test true-color CRI rendering on natural Kerala materials, and witness how light sculpts architecture in real time.",
+    },
   ];
 
   const spatialDimensions = [
@@ -50,55 +45,54 @@ export default function AboutPage() {
       icon: Eye,
       tag: "Spatial Perception",
       title: "Sculpting Volume & Depth",
-      desc: "Architecture without lighting collapses into flatness once the sun sets. Strategic illumination carves out depth, floats ceilings, grounds vertical planes, and guides human intuition through space with effortless grace."
+      desc: "Architecture without lighting collapses into flatness once the sun sets. Strategic illumination carves out depth, floats ceilings, grounds vertical planes, and guides human intuition through space with effortless grace.",
     },
     {
       icon: Layers,
       tag: "Material Truth",
       title: "Revealing Kerala's Authentic Textures",
-      desc: "Kerala's luxury estates celebrate rich, organic materials—hand-dressed laterite, warm teakwood, and honed marble. Our calibrated 97+ CRI optics awaken the deep grain, veins, and tactile soul of every surface without distortion."
+      desc: "Kerala's luxury estates celebrate rich, organic materials—hand-dressed laterite, warm teakwood, and honed marble. Our calibrated 97+ CRI optics awaken the deep grain, veins, and tactile soul of every surface without distortion.",
     },
     {
       icon: SunMedium,
       tag: "Circadian Wellness",
       title: "Light in Harmony with Life",
-      desc: "Light governs human biology. From invigorating, crisp mornings to warm, amber twilight (1800K), our circadian engineering creates restorative sanctuaries that calm the nervous system and nurture genuine well-being."
+      desc: "Light governs human biology. From invigorating, crisp mornings to warm, amber twilight (1800K), our circadian engineering creates restorative sanctuaries that calm the nervous system and nurture genuine well-being.",
     },
     {
       icon: Sliders,
       tag: "Dark-Light Balance",
       title: "The Poetry of Shadow",
-      desc: "True luxury is not floodlighting every corner; it is the deliberate interplay between radiance and shadow. By engineering fixtures with UGR < 9, the light source disappears—leaving only pure, glare-free ambience."
-    }
+      desc: "True luxury is not floodlighting every corner; it is the deliberate interplay between radiance and shadow. By engineering fixtures with UGR < 9, the light source disappears—leaving only pure, glare-free ambience.",
+    },
   ];
 
   const values = [
     {
       num: "01",
       title: "Dark-Light Mastery",
-      desc: "Light should reveal space, not glare into eyes. We engineer fixtures with deep baffles and UGR < 9 so the source disappears, leaving only pure, evocative illumination."
+      desc: "Light should reveal space, not glare into eyes. We engineer fixtures with deep baffles and UGR < 9 so the source disappears, leaving only pure, evocative illumination.",
     },
     {
       num: "02",
       title: "High CRI True-Color Fidelity",
-      desc: "Kerala's luxury residences feature exquisite teakwood, hand-cut laterite, and polished marble. We strictly specify CRI 97+ (R9 > 90) so textures remain vibrant and authentic."
+      desc: "Kerala's luxury residences feature exquisite teakwood, hand-cut laterite, and polished marble. We strictly specify CRI 97+ (R9 > 90) so textures remain vibrant and authentic.",
     },
     {
       num: "03",
       title: "End-to-End Architectural Integrity",
-      desc: "We bridge the divide between theoretical DIALux blueprints and actual job-site electrical conduits, ensuring zero execution drift from concept to commissioning."
+      desc: "We bridge the divide between theoretical DIALux blueprints and actual job-site electrical conduits, ensuring zero execution drift from concept to commissioning.",
     },
     {
       num: "04",
       title: "Circadian Harmony",
-      desc: "Light governs human well-being. We calibrate dynamic color temperatures to support biological recovery, mental clarity, and tranquil evening relaxation."
-    }
+      desc: "Light governs human well-being. We calibrate dynamic color temperatures to support biological recovery, mental clarity, and tranquil evening relaxation.",
+    },
   ];
 
   return (
     <div className="bg-obsidian-950 text-[#F4F3EE] pt-32 pb-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* 01. Architectural Manifesto / Hero Header */}
         <div className="max-w-4xl space-y-6 mb-24">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-luxe-gold/10 border border-luxe-gold/30 text-luxe-gold text-xs uppercase tracking-[0.25em] font-mono">
@@ -106,17 +100,22 @@ export default function AboutPage() {
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light uppercase tracking-tight text-white leading-tight">
             Light is the fourth dimension <br />
-            <span className="gold-gradient-text italic font-normal">of architecture.</span>
+            <span className="gold-gradient-text italic font-normal">
+              of architecture.
+            </span>
           </h1>
           <p className="text-neutral-300 text-base sm:text-xl font-light leading-relaxed max-w-3xl">
-            At Trade House, we believe lighting should be felt before it is noticed. We don't sell fixtures; we sculpt atmospheres, celebrate materiality, and elevate human living through the precise physics and art of light.
+            At Trade House, we believe lighting should be felt before it is
+            noticed. We don't sell fixtures; we sculpt atmospheres, celebrate
+            materiality, and elevate human living through the precise physics
+            and art of light.
           </p>
         </div>
 
         {/* 02. The Spatial Philosophy: Why Lighting Defines Space */}
         <div className="my-24 p-8 sm:p-14 rounded-3xl bg-gradient-to-b from-obsidian-900 to-obsidian-950 border border-white/10 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-luxe-gold/5 rounded-full blur-3xl pointer-events-none" />
-          
+
           <div className="max-w-3xl space-y-4 mb-14">
             <span className="text-xs uppercase tracking-[0.25em] text-luxe-gold font-mono">
               The Philosophy of Space
@@ -126,7 +125,11 @@ export default function AboutPage() {
               <span className="gold-gradient-text italic">It Creates It.</span>
             </h2>
             <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
-              Without thoughtful illumination, even the most breathtaking architectural masterpiece becomes flat and indistinct in the dark. Light directs the eye, awakens emotional resonance, reveals raw textures, and transforms physical boundaries into living experiences.
+              Without thoughtful illumination, even the most breathtaking
+              architectural masterpiece becomes flat and indistinct in the dark.
+              Light directs the eye, awakens emotional resonance, reveals raw
+              textures, and transforms physical boundaries into living
+              experiences.
             </p>
           </div>
 
@@ -134,8 +137,8 @@ export default function AboutPage() {
             {spatialDimensions.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="p-6 rounded-2xl bg-obsidian-950/70 border border-white/5 hover:border-luxe-gold/40 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div className="space-y-4">
@@ -168,14 +171,15 @@ export default function AboutPage() {
               The Evolution of Trade House
             </h2>
             <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
-              Our transition from foundational electrical engineering to Kerala's vanguard architectural lighting studio.
+              Our transition from foundational electrical engineering to
+              Kerala's vanguard architectural lighting studio.
             </p>
           </div>
 
           {/* Timeline Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
             {milestones.map((m, idx) => (
-              <div 
+              <div
                 key={idx}
                 className="relative p-8 sm:p-10 rounded-3xl bg-obsidian-900 border border-white/10 hover:border-luxe-gold/40 transition-all duration-500 flex flex-col justify-between group"
               >
@@ -208,7 +212,9 @@ export default function AboutPage() {
 
                 <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between text-xs text-neutral-400 font-mono">
                   <span>Milestone 0{idx + 1}</span>
-                  <span className="text-luxe-gold group-hover:translate-x-1 transition-transform">→</span>
+                  <span className="text-luxe-gold group-hover:translate-x-1 transition-transform">
+                    →
+                  </span>
                 </div>
               </div>
             ))}
@@ -224,28 +230,38 @@ export default function AboutPage() {
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-light leading-tight">
                 Step Inside the Kochi <br />
-                <span className="gold-gradient-text italic">Lighting Experience Studio</span>
+                <span className="gold-gradient-text italic">
+                  Lighting Experience Studio
+                </span>
               </h2>
               <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
-                Choosing architectural lighting from a catalogue or under bright showroom spotlights is an outdated gamble. Our new experience center in Palarivattom/Kalloor, Kochi is conceived as an interactive playground for architects, interior designers, and discerning homeowners.
+                Choosing architectural lighting from a catalogue or under bright
+                showroom spotlights is an outdated gamble. Our new experience
+                center in Palarivattom/palarivattom, Kochi is conceived as an
+                interactive playground for architects, interior designers, and
+                discerning homeowners.
               </p>
               <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
-                Witness how beam angles carve shadows across hand-crafted teak and textured plaster. Compare CRI 80 versus museum-grade CRI 98 side by side, and experience 1800K to 4000K circadian shifts before a single conduit is laid on your site.
+                Witness how beam angles carve shadows across hand-crafted teak
+                and textured plaster. Compare CRI 80 versus museum-grade CRI 98
+                side by side, and experience 1800K to 4000K circadian shifts
+                before a single conduit is laid on your site.
               </p>
               <div className="pt-4 flex flex-wrap gap-4">
                 <Link
                   to="/studio"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold uppercase tracking-wider hover:bg-luxe-champagne transition-all shadow-lg shadow-black/40"
                 >
-                  Book Private Studio Tour <ArrowRight className="w-3.5 h-3.5" />
+                  Book Private Studio Tour{" "}
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link
                   to="/start-a-project"
                   onClick={() => {
                     trackInquiryClick({
-                      link_location: 'about_experience_center',
-                      button_text: 'Consult Our Designers',
-                      destination: '/start-a-project',
+                      link_location: "about_experience_center",
+                      button_text: "Consult Our Designers",
+                      destination: "/start-a-project",
                     });
                   }}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/15 text-xs font-medium uppercase tracking-wider transition-all"
@@ -268,9 +284,9 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 onClick={() => {
                   trackMapClick({
-                    link_location: 'about_location_card',
-                    button_text: 'Open in Google Maps',
-                    destination: 'google_maps',
+                    link_location: "about_location_card",
+                    button_text: "Open in Google Maps",
+                    destination: "google_maps",
                   });
                 }}
                 className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-obsidian-950/80 backdrop-blur-md border border-white/10 flex items-center justify-between hover:border-luxe-gold/50 transition-all group/loc"
@@ -283,7 +299,7 @@ export default function AboutPage() {
                       Flagship Destination
                     </span>
                     <p className="text-xs sm:text-sm font-medium text-white group-hover/loc:text-luxe-gold transition-colors">
-                      Palarivattom / Kalloor, Kochi
+                      Palarivattom / palarivattom, Kochi
                     </p>
                   </div>
                 </div>
@@ -308,7 +324,10 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((val, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-obsidian-900 border border-white/5 space-y-4 hover:border-luxe-gold/30 transition-all">
+              <div
+                key={idx}
+                className="p-8 rounded-3xl bg-obsidian-900 border border-white/5 space-y-4 hover:border-luxe-gold/30 transition-all"
+              >
                 <span className="font-mono text-xs text-luxe-gold font-bold uppercase tracking-widest block">
                   Principle {val.num}
                 </span>
@@ -334,16 +353,27 @@ export default function AboutPage() {
                 Engineered for Architectural Trust
               </h2>
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
-                We handle every stage internally: concept, photometric calculations, electrical conduit layouts, luminaire supply, site supervision, beam focusing, and 5-year warranty maintenance.
+                We handle every stage internally: concept, photometric
+                calculations, electrical conduit layouts, luminaire supply, site
+                supervision, beam focusing, and 5-year warranty maintenance.
               </p>
             </div>
 
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {TRUST_METRICS.map((item, idx) => (
-                <div key={idx} className="p-6 rounded-2xl bg-obsidian-950 border border-white/5 space-y-2">
-                  <span className="font-serif text-3xl text-luxe-gold font-light">{item.value}</span>
-                  <p className="text-xs font-medium text-white uppercase tracking-wider">{item.label}</p>
-                  <p className="text-[11px] text-neutral-400 font-light">{item.sub}</p>
+                <div
+                  key={idx}
+                  className="p-6 rounded-2xl bg-obsidian-950 border border-white/5 space-y-2"
+                >
+                  <span className="font-serif text-3xl text-luxe-gold font-light">
+                    {item.value}
+                  </span>
+                  <p className="text-xs font-medium text-white uppercase tracking-wider">
+                    {item.label}
+                  </p>
+                  <p className="text-[11px] text-neutral-400 font-light">
+                    {item.sub}
+                  </p>
                 </div>
               ))}
             </div>
@@ -360,7 +390,8 @@ export default function AboutPage() {
             <span className="gold-gradient-text italic">Feels at Night?</span>
           </h2>
           <p className="text-neutral-300 text-sm sm:text-base font-light max-w-xl mx-auto leading-relaxed">
-            Whether you are building an expansive waterfront villa in Kochi or curating a boutique commercial space, let's sculpt it with light.
+            Whether you are building an expansive waterfront villa in Kochi or
+            curating a boutique commercial space, let's sculpt it with light.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
             <Link
@@ -373,9 +404,9 @@ export default function AboutPage() {
               to="/start-a-project"
               onClick={() => {
                 trackInquiryClick({
-                  link_location: 'about_bottom_cta',
-                  button_text: 'Start a Project',
-                  destination: '/start-a-project',
+                  link_location: "about_bottom_cta",
+                  button_text: "Start a Project",
+                  destination: "/start-a-project",
                 });
               }}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/15 text-xs font-semibold uppercase tracking-wider transition-all"
@@ -384,9 +415,7 @@ export default function AboutPage() {
             </Link>
           </div>
         </div>
-
       </div>
     </div>
   );
 }
-

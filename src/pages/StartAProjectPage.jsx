@@ -1,79 +1,100 @@
-import React, { useState } from 'react';
-import { 
-  Home, 
-  Building2, 
-  Store, 
-  UtensilsCrossed, 
-  Briefcase, 
-  Sparkles, 
-  CheckCircle2, 
-  ArrowRight, 
-  ArrowLeft, 
-  Clock, 
-  MapPin, 
-  Maximize2, 
-  Sliders, 
-  Send, 
-  MessageSquare 
-} from 'lucide-react';
-import { BRAND } from '../data/siteData';
+import {
+  ArrowLeft,
+  ArrowRight,
+  Briefcase,
+  Building2,
+  CheckCircle2,
+  Home,
+  MapPin,
+  MessageSquare,
+  Sliders,
+  Sparkles,
+  Store,
+  UtensilsCrossed,
+} from "lucide-react";
+import { useState } from "react";
 import {
   trackInquiryClick,
-  trackWhatsAppClick,
   trackInquirySubmit,
-} from '../utils/analytics';
+  trackWhatsAppClick,
+} from "../utils/analytics";
 
 export default function StartAProjectPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Form State
-  const [projectType, setProjectType] = useState('Luxury Villa');
-  const [servicesNeeded, setServicesNeeded] = useState(['Lighting Design', 'Architectural Lighting']);
-  const [location, setLocation] = useState('Kochi, Kerala');
-  const [projectScale, setProjectScale] = useState('Premium / Luxury (5,000+ sq.ft)');
-  const [timeline, setTimeline] = useState('1 – 3 months');
+  const [projectType, setProjectType] = useState("Luxury Villa");
+  const [servicesNeeded, setServicesNeeded] = useState([
+    "Lighting Design",
+    "Architectural Lighting",
+  ]);
+  const [location, setLocation] = useState("Kochi, Kerala");
+  const [projectScale, setProjectScale] = useState(
+    "Premium / Luxury (5,000+ sq.ft)",
+  );
+  const [timeline, setTimeline] = useState("1 – 3 months");
   const [clientDetails, setClientDetails] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
     isArchitectOrDesigner: false,
   });
 
   const spaceOptions = [
-    { label: 'Luxury Villa', icon: Home, desc: 'Independent villa or estate' },
-    { label: 'Penthouse / Apt', icon: Building2, desc: 'Luxury high-rise residence' },
-    { label: 'Home Renovation', icon: Sparkles, desc: 'Lighting modernization' },
-    { label: 'Boutique Retail', icon: Store, desc: 'Showroom or flagship salon' },
-    { label: 'Restaurant / Cafe', icon: UtensilsCrossed, desc: 'Atmospheric dining' },
-    { label: 'Commercial HQ', icon: Briefcase, desc: 'Corporate office or atrium' },
+    { label: "Luxury Villa", icon: Home, desc: "Independent villa or estate" },
+    {
+      label: "Penthouse / Apt",
+      icon: Building2,
+      desc: "Luxury high-rise residence",
+    },
+    {
+      label: "Home Renovation",
+      icon: Sparkles,
+      desc: "Lighting modernization",
+    },
+    {
+      label: "Boutique Retail",
+      icon: Store,
+      desc: "Showroom or flagship salon",
+    },
+    {
+      label: "Restaurant / Cafe",
+      icon: UtensilsCrossed,
+      desc: "Atmospheric dining",
+    },
+    {
+      label: "Commercial HQ",
+      icon: Briefcase,
+      desc: "Corporate office or atrium",
+    },
   ];
 
   const serviceOptions = [
-    'Lighting Design & Photometrics',
-    'CAD Electrical Drawings & Circuit Plans',
-    'Curated Architectural Fixture Supply',
-    'On-Site Electrical Wiring & Execution',
-    'Precision Fixture Installation & Laser Leveling',
-    'Twilight Aiming & Smart Scene Setup',
-    'Complete Turnkey (Planning to Execution)'
+    "Lighting Design & Photometrics",
+    "CAD Electrical Drawings & Circuit Plans",
+    "Curated Architectural Fixture Supply",
+    "On-Site Electrical Wiring & Execution",
+    "Precision Fixture Installation & Laser Leveling",
+    "Twilight Aiming & Smart Scene Setup",
+    "Complete Turnkey (Planning to Execution)",
   ];
 
   const scaleOptions = [
-    'Boutique Space (< 2,500 sq.ft)',
-    'Medium Residence (2,500 – 5,000 sq.ft)',
-    'Premium / Luxury (5,000 – 10,000 sq.ft)',
-    'Grand Estate / Commercial (10,000+ sq.ft)',
-    'Not Sure / In Blueprint Phase'
+    "Boutique Space (< 2,500 sq.ft)",
+    "Medium Residence (2,500 – 5,000 sq.ft)",
+    "Premium / Luxury (5,000 – 10,000 sq.ft)",
+    "Grand Estate / Commercial (10,000+ sq.ft)",
+    "Not Sure / In Blueprint Phase",
   ];
 
   const timelineOptions = [
-    'Immediately (Site ready for conduits)',
-    '1 – 3 months (Ceiling & framing phase)',
-    '3 – 6 months (Architectural planning)',
-    '6+ months (Initial concept)',
-    'Just exploring possibilities'
+    "Immediately (Site ready for conduits)",
+    "1 – 3 months (Ceiling & framing phase)",
+    "3 – 6 months (Architectural planning)",
+    "6+ months (Initial concept)",
+    "Just exploring possibilities",
   ];
 
   const toggleService = (srv) => {
@@ -87,22 +108,22 @@ export default function StartAProjectPage() {
   const handleNext = () => {
     if (currentStep < 6) {
       setCurrentStep(currentStep + 1);
-      window.scrollTo({ top: 120, behavior: 'smooth' });
+      window.scrollTo({ top: 120, behavior: "smooth" });
     }
   };
 
   const handlePrev = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
-      window.scrollTo({ top: 120, behavior: 'smooth' });
+      window.scrollTo({ top: 120, behavior: "smooth" });
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     trackInquirySubmit({
-      link_location: 'start_a_project_wizard',
-      form_name: 'Start a Project Wizard',
+      link_location: "start_a_project_wizard",
+      form_name: "Start a Project Wizard",
       project_type: projectType,
       project_scale: projectScale,
       timeline: timeline,
@@ -113,15 +134,16 @@ export default function StartAProjectPage() {
 
   // Generate WhatsApp prefilled message string
   const generateWhatsAppMessage = () => {
-    const text = `*New Project Enquiry — Trade House Lighting Studio*\n\n` +
+    const text =
+      `*New Project Enquiry — Trade House Lighting Studio*\n\n` +
       `*Space:* ${projectType}\n` +
-      `*Services:* ${servicesNeeded.join(', ')}\n` +
+      `*Services:* ${servicesNeeded.join(", ")}\n` +
       `*Location:* ${location}\n` +
       `*Scale:* ${projectScale}\n` +
       `*Timeline:* ${timeline}\n` +
       `*Client:* ${clientDetails.name} (${clientDetails.phone})\n` +
       `*Email:* ${clientDetails.email}\n` +
-      `*Brief:* ${clientDetails.message || 'None'}`;
+      `*Brief:* ${clientDetails.message || "None"}`;
     return `https://wa.me/917736636427?text=${encodeURIComponent(text)}`;
   };
 
@@ -134,10 +156,14 @@ export default function StartAProjectPage() {
             <Sliders className="w-3.5 h-3.5" /> Guided Project Concierge
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-tight">
-            Start Your <span className="gold-gradient-text italic font-normal">Project</span>
+            Start Your{" "}
+            <span className="gold-gradient-text italic font-normal">
+              Project
+            </span>
           </h1>
           <p className="text-neutral-400 text-xs sm:text-sm font-light">
-            Step {currentStep} of 6 • Tell us about your architectural volume and design aspirations.
+            Step {currentStep} of 6 • Tell us about your architectural volume
+            and design aspirations.
           </p>
 
           {/* Progress Bar */}
@@ -161,7 +187,10 @@ export default function StartAProjectPage() {
                 Project Scope Synthesized
               </h2>
               <p className="text-xs sm:text-sm text-neutral-300 max-w-lg mx-auto font-light leading-relaxed">
-                Thank you, <strong>{clientDetails.name}</strong>. Our senior lighting design team in Kalloor, Kochi has logged your enquiry for your <strong>{projectType}</strong> in <strong>{location}</strong>.
+                Thank you, <strong>{clientDetails.name}</strong>. Our senior
+                lighting design team in palarivattom, Kochi has logged your
+                enquiry for your <strong>{projectType}</strong> in{" "}
+                <strong>{location}</strong>.
               </p>
 
               {/* Summary synthesis card */}
@@ -180,7 +209,9 @@ export default function StartAProjectPage() {
                 </div>
                 <div className="flex justify-between pt-1">
                   <span className="text-neutral-400">Services:</span>
-                  <span className="text-white">{servicesNeeded.length} disciplines selected</span>
+                  <span className="text-white">
+                    {servicesNeeded.length} disciplines selected
+                  </span>
                 </div>
               </div>
 
@@ -192,17 +223,21 @@ export default function StartAProjectPage() {
                   rel="noopener noreferrer"
                   onClick={() => {
                     trackWhatsAppClick({
-                      link_location: 'start_a_project_post_submit',
-                      button_text: 'Send directly via WhatsApp',
-                      destination: 'whatsapp',
+                      link_location: "start_a_project_post_submit",
+                      button_text: "Send directly via WhatsApp",
+                      destination: "whatsapp",
                     });
                   }}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20"
                 >
-                  <MessageSquare className="w-4 h-4" /> Send directly via WhatsApp
+                  <MessageSquare className="w-4 h-4" /> Send directly via
+                  WhatsApp
                 </a>
                 <button
-                  onClick={() => { setIsSubmitted(false); setCurrentStep(1); }}
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setCurrentStep(1);
+                  }}
                   className="text-xs text-neutral-400 hover:text-white uppercase font-mono tracking-wider underline py-2"
                 >
                   Start Over
@@ -237,17 +272,25 @@ export default function StartAProjectPage() {
                           onClick={() => setProjectType(opt.label)}
                           className={`p-6 rounded-2xl text-left border transition-all duration-300 flex flex-col justify-between space-y-4 ${
                             isSelected
-                              ? 'bg-white/[0.06] border-luxe-gold/70 text-white shadow-md shadow-black/40 scale-[1.01]'
-                              : 'bg-obsidian-950 border-white/10 text-neutral-300 hover:border-white/20 hover:text-white'
+                              ? "bg-white/[0.06] border-luxe-gold/70 text-white shadow-md shadow-black/40 scale-[1.01]"
+                              : "bg-obsidian-950 border-white/10 text-neutral-300 hover:border-white/20 hover:text-white"
                           }`}
                         >
                           <div className="flex items-center justify-between w-full">
-                            <Icon className={`w-6 h-6 ${isSelected ? 'text-luxe-gold' : 'text-neutral-400'}`} />
-                            {isSelected && <span className="w-2 h-2 rounded-full bg-luxe-gold" />}
+                            <Icon
+                              className={`w-6 h-6 ${isSelected ? "text-luxe-gold" : "text-neutral-400"}`}
+                            />
+                            {isSelected && (
+                              <span className="w-2 h-2 rounded-full bg-luxe-gold" />
+                            )}
                           </div>
                           <div>
-                            <h3 className="font-serif text-lg text-white font-medium">{opt.label}</h3>
-                            <p className="text-[11px] text-neutral-400 font-light mt-0.5">{opt.desc}</p>
+                            <h3 className="font-serif text-lg text-white font-medium">
+                              {opt.label}
+                            </h3>
+                            <p className="text-[11px] text-neutral-400 font-light mt-0.5">
+                              {opt.desc}
+                            </p>
                           </div>
                         </button>
                       );
@@ -281,13 +324,17 @@ export default function StartAProjectPage() {
                           onClick={() => toggleService(srv)}
                           className={`p-4 rounded-xl text-left border text-xs font-medium transition-all flex items-center justify-between ${
                             isChecked
-                              ? 'bg-white/[0.06] border-luxe-gold/60 text-white shadow-sm shadow-black/30'
-                              : 'bg-obsidian-950 border-white/10 text-neutral-300 hover:border-white/20 hover:text-white'
+                              ? "bg-white/[0.06] border-luxe-gold/60 text-white shadow-sm shadow-black/30"
+                              : "bg-obsidian-950 border-white/10 text-neutral-300 hover:border-white/20 hover:text-white"
                           }`}
                         >
                           <span>{srv}</span>
-                          <div className={`w-5 h-5 rounded-md border flex items-center justify-center ${isChecked ? 'bg-luxe-gold border-luxe-gold text-obsidian-950' : 'border-white/20'}`}>
-                            {isChecked && <CheckCircle2 className="w-3.5 h-3.5" />}
+                          <div
+                            className={`w-5 h-5 rounded-md border flex items-center justify-center ${isChecked ? "bg-luxe-gold border-luxe-gold text-obsidian-950" : "border-white/20"}`}
+                          >
+                            {isChecked && (
+                              <CheckCircle2 className="w-3.5 h-3.5" />
+                            )}
                           </div>
                         </button>
                       );
@@ -307,7 +354,8 @@ export default function StartAProjectPage() {
                       Where is the project located?
                     </h2>
                     <p className="text-xs text-neutral-400 font-light">
-                      We primarily serve Kochi, Ernakulam, and all districts across Kerala &amp; South India.
+                      We primarily serve Kochi, Ernakulam, and all districts
+                      across Kerala &amp; South India.
                     </p>
                   </div>
 
@@ -325,8 +373,17 @@ export default function StartAProjectPage() {
                     </div>
 
                     <div className="flex flex-wrap gap-2 pt-2">
-                      <span className="text-[11px] font-mono text-neutral-500 self-center">Popular:</span>
-                      {['Kalloor, Kochi', 'Kadavanthra, Kochi', 'Marine Drive, Kochi', 'Panampilly Nagar', 'Calicut', 'Trivandrum'].map((loc) => (
+                      <span className="text-[11px] font-mono text-neutral-500 self-center">
+                        Popular:
+                      </span>
+                      {[
+                        "palarivattom, Kochi",
+                        "Kadavanthra, Kochi",
+                        "Marine Drive, Kochi",
+                        "Panampilly Nagar",
+                        "Calicut",
+                        "Trivandrum",
+                      ].map((loc) => (
                         <button
                           key={loc}
                           type="button"
@@ -352,7 +409,8 @@ export default function StartAProjectPage() {
                       What is the approximate scale?
                     </h2>
                     <p className="text-xs text-neutral-400 font-light">
-                      Helps us estimate optical fixture quantities and photometric complexity.
+                      Helps us estimate optical fixture quantities and
+                      photometric complexity.
                     </p>
                   </div>
 
@@ -366,12 +424,14 @@ export default function StartAProjectPage() {
                           onClick={() => setProjectScale(scale)}
                           className={`w-full p-4 rounded-2xl text-left border text-xs sm:text-sm font-medium transition-all flex items-center justify-between ${
                             isSelected
-                              ? 'bg-luxe-gold/15 border-luxe-gold text-white shadow-[0_0_15px_rgba(229,184,105,0.2)]'
-                              : 'bg-obsidian-950 border-white/10 text-neutral-300 hover:border-white/25 hover:text-white'
+                              ? "bg-luxe-gold/15 border-luxe-gold text-white shadow-[0_0_15px_rgba(229,184,105,0.2)]"
+                              : "bg-obsidian-950 border-white/10 text-neutral-300 hover:border-white/25 hover:text-white"
                           }`}
                         >
                           <span>{scale}</span>
-                          {isSelected && <span className="w-2.5 h-2.5 rounded-full bg-luxe-gold shadow-[0_0_8px_#E5B869]" />}
+                          {isSelected && (
+                            <span className="w-2.5 h-2.5 rounded-full bg-luxe-gold shadow-[0_0_8px_#E5B869]" />
+                          )}
                         </button>
                       );
                     })}
@@ -390,7 +450,8 @@ export default function StartAProjectPage() {
                       Expected Timeline
                     </h2>
                     <p className="text-xs text-neutral-400 font-light">
-                      When is electrical conduit routing or ceiling framing scheduled?
+                      When is electrical conduit routing or ceiling framing
+                      scheduled?
                     </p>
                   </div>
 
@@ -404,12 +465,14 @@ export default function StartAProjectPage() {
                           onClick={() => setTimeline(time)}
                           className={`w-full p-4 rounded-2xl text-left border text-xs sm:text-sm font-medium transition-all flex items-center justify-between ${
                             isSelected
-                              ? 'bg-luxe-gold/15 border-luxe-gold text-white shadow-[0_0_15px_rgba(229,184,105,0.2)]'
-                              : 'bg-obsidian-950 border-white/10 text-neutral-300 hover:border-white/25 hover:text-white'
+                              ? "bg-luxe-gold/15 border-luxe-gold text-white shadow-[0_0_15px_rgba(229,184,105,0.2)]"
+                              : "bg-obsidian-950 border-white/10 text-neutral-300 hover:border-white/25 hover:text-white"
                           }`}
                         >
                           <span>{time}</span>
-                          {isSelected && <span className="w-2.5 h-2.5 rounded-full bg-luxe-gold shadow-[0_0_8px_#E5B869]" />}
+                          {isSelected && (
+                            <span className="w-2.5 h-2.5 rounded-full bg-luxe-gold shadow-[0_0_8px_#E5B869]" />
+                          )}
                         </button>
                       );
                     })}
@@ -428,55 +491,84 @@ export default function StartAProjectPage() {
                       Your Details &amp; Notes
                     </h2>
                     <p className="text-xs text-neutral-400 font-light">
-                      We treat your project information with strict architectural confidentiality.
+                      We treat your project information with strict
+                      architectural confidentiality.
                     </p>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-mono uppercase text-neutral-300">Your Full Name *</label>
+                      <label className="text-[11px] font-mono uppercase text-neutral-300">
+                        Your Full Name *
+                      </label>
                       <input
                         type="text"
                         required
                         placeholder="e.g. Dr. Thomas Kurian"
                         value={clientDetails.name}
-                        onChange={(e) => setClientDetails({ ...clientDetails, name: e.target.value })}
+                        onChange={(e) =>
+                          setClientDetails({
+                            ...clientDetails,
+                            name: e.target.value,
+                          })
+                        }
                         className="w-full bg-obsidian-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-luxe-gold/60"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-mono uppercase text-neutral-300">Phone Number *</label>
+                      <label className="text-[11px] font-mono uppercase text-neutral-300">
+                        Phone Number *
+                      </label>
                       <input
                         type="tel"
                         required
                         placeholder="+91 98460 XXXXX"
                         value={clientDetails.phone}
-                        onChange={(e) => setClientDetails({ ...clientDetails, phone: e.target.value })}
+                        onChange={(e) =>
+                          setClientDetails({
+                            ...clientDetails,
+                            phone: e.target.value,
+                          })
+                        }
                         className="w-full bg-obsidian-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-luxe-gold/60"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono uppercase text-neutral-300">Email Address *</label>
+                    <label className="text-[11px] font-mono uppercase text-neutral-300">
+                      Email Address *
+                    </label>
                     <input
                       type="email"
                       required
                       placeholder="your.email@domain.com"
                       value={clientDetails.email}
-                      onChange={(e) => setClientDetails({ ...clientDetails, email: e.target.value })}
+                      onChange={(e) =>
+                        setClientDetails({
+                          ...clientDetails,
+                          email: e.target.value,
+                        })
+                      }
                       className="w-full bg-obsidian-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-luxe-gold/60"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono uppercase text-neutral-300">Project Brief or Special Requirements</label>
+                    <label className="text-[11px] font-mono uppercase text-neutral-300">
+                      Project Brief or Special Requirements
+                    </label>
                     <textarea
                       rows={3}
                       placeholder="Double-height living room, art collection, exposed concrete, waterfront view..."
                       value={clientDetails.message}
-                      onChange={(e) => setClientDetails({ ...clientDetails, message: e.target.value })}
+                      onChange={(e) =>
+                        setClientDetails({
+                          ...clientDetails,
+                          message: e.target.value,
+                        })
+                      }
                       className="w-full bg-obsidian-950 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-luxe-gold/60"
                     />
                   </div>
@@ -485,10 +577,17 @@ export default function StartAProjectPage() {
                     <input
                       type="checkbox"
                       checked={clientDetails.isArchitectOrDesigner}
-                      onChange={(e) => setClientDetails({ ...clientDetails, isArchitectOrDesigner: e.target.checked })}
+                      onChange={(e) =>
+                        setClientDetails({
+                          ...clientDetails,
+                          isArchitectOrDesigner: e.target.checked,
+                        })
+                      }
                       className="accent-luxe-gold w-4 h-4 rounded"
                     />
-                    <span>I am an Architect / Interior Designer / Contractor</span>
+                    <span>
+                      I am an Architect / Interior Designer / Contractor
+                    </span>
                   </label>
                 </div>
               )}
@@ -503,7 +602,9 @@ export default function StartAProjectPage() {
                   >
                     <ArrowLeft className="w-4 h-4" /> Previous
                   </button>
-                ) : <div />}
+                ) : (
+                  <div />
+                )}
 
                 {currentStep < 6 ? (
                   <button
@@ -519,9 +620,9 @@ export default function StartAProjectPage() {
                     type="submit"
                     onClick={() => {
                       trackInquiryClick({
-                        link_location: 'start_a_project_wizard',
+                        link_location: "start_a_project_wizard",
                         button_text: "Let's Design Your Light",
-                        destination: 'form',
+                        destination: "form",
                       });
                     }}
                     className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-luxe-gold to-luxe-bronze text-obsidian-950 text-xs font-bold uppercase tracking-widest hover:brightness-105 active:scale-[0.98] transition-all shadow-lg shadow-black/40"

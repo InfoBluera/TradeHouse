@@ -38,7 +38,7 @@ export default function Footer() {
             </p>
             <p className="text-sm text-neutral-400 font-light max-w-lg leading-relaxed">
               Trade House is an architectural lighting consultancy and luxury
-              experience studio in Kalloor, Kochi. We design, curate, and
+              experience studio in palarivattom, Kochi. We design, curate, and
               execute glare-free lighting environments for modern luxury
               residences, villas, commercial atriums, and hospitality spaces
               across Kerala.

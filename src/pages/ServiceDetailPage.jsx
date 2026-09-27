@@ -1,16 +1,23 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { SERVICES, PROJECTS } from '../data/siteData';
-import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, Layers, ShieldCheck, Phone, ArrowUpRight } from 'lucide-react';
-import { trackInquiryClick } from '../utils/analytics';
+import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
+import { SERVICES } from "../data/siteData";
+import { trackInquiryClick } from "../utils/analytics";
 
 export default function ServiceDetailPage() {
   const { slug } = useParams();
-  const currentIndex = SERVICES.findIndex((s) => s.slug === slug || s.id === slug || s.aliases?.includes(slug));
+  const currentIndex = SERVICES.findIndex(
+    (s) => s.slug === slug || s.id === slug || s.aliases?.includes(slug),
+  );
   const service = currentIndex !== -1 ? SERVICES[currentIndex] : SERVICES[0];
 
-  const prevService = currentIndex > 0 ? SERVICES[currentIndex - 1] : SERVICES[SERVICES.length - 1];
-  const nextService = currentIndex < SERVICES.length - 1 ? SERVICES[currentIndex + 1] : SERVICES[0];
+  const prevService =
+    currentIndex > 0
+      ? SERVICES[currentIndex - 1]
+      : SERVICES[SERVICES.length - 1];
+  const nextService =
+    currentIndex < SERVICES.length - 1
+      ? SERVICES[currentIndex + 1]
+      : SERVICES[0];
 
   return (
     <div className="bg-obsidian-950 text-[#F4F3EE] pt-28 pb-24 min-h-screen">
@@ -72,7 +79,10 @@ export default function ServiceDetailPage() {
               </h3>
               <div className="space-y-3">
                 {service.features.map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-4 rounded-2xl bg-obsidian-900 border border-white/5 text-xs sm:text-sm text-neutral-200">
+                  <div
+                    key={idx}
+                    className="flex items-start gap-3 p-4 rounded-2xl bg-obsidian-900 border border-white/5 text-xs sm:text-sm text-neutral-200"
+                  >
                     <CheckCircle2 className="w-5 h-5 text-luxe-gold shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </div>
@@ -86,19 +96,27 @@ export default function ServiceDetailPage() {
               <span className="text-xs uppercase font-mono tracking-widest text-luxe-gold block">
                 Discipline Summary
               </span>
-              
+
               <div className="space-y-3 border-b border-white/10 pb-6 text-xs">
-                <span className="text-neutral-400 uppercase font-mono block">Category &amp; Phase</span>
-                <p className="text-white font-medium">{service.category} (Pillar {service.pillarNumber})</p>
+                <span className="text-neutral-400 uppercase font-mono block">
+                  Category &amp; Phase
+                </span>
+                <p className="text-white font-medium">
+                  {service.category} (Pillar {service.pillarNumber})
+                </p>
               </div>
 
               <div className="space-y-3 border-b border-white/10 pb-6 text-xs">
-                <span className="text-neutral-400 uppercase font-mono block">Ideal Project Typology</span>
+                <span className="text-neutral-400 uppercase font-mono block">
+                  Ideal Project Typology
+                </span>
                 <p className="text-white font-medium">{service.idealFor}</p>
               </div>
 
               <div className="space-y-3 border-b border-white/10 pb-6 text-xs">
-                <span className="text-neutral-400 uppercase font-mono block">Key Deliverables</span>
+                <span className="text-neutral-400 uppercase font-mono block">
+                  Key Deliverables
+                </span>
                 <p className="text-white font-medium">{service.deliverables}</p>
               </div>
 
@@ -106,10 +124,10 @@ export default function ServiceDetailPage() {
                 to="/start-a-project"
                 onClick={() => {
                   trackInquiryClick({
-                    link_location: 'service_detail_sidebar',
+                    link_location: "service_detail_sidebar",
                     button_text: `Inquire for ${service.title}`,
                     service_title: service.title,
-                    destination: '/start-a-project',
+                    destination: "/start-a-project",
                   });
                 }}
                 className="w-full inline-flex items-center justify-center gap-2 py-4 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold uppercase tracking-wider hover:bg-luxe-champagne transition-all shadow-lg shadow-luxe-gold/20"
@@ -120,15 +138,20 @@ export default function ServiceDetailPage() {
 
             {/* Support Callout */}
             <div className="p-6 rounded-3xl bg-white/5 border border-white/5 text-xs space-y-2">
-              <span className="text-luxe-champagne font-semibold block">Need immediate advice?</span>
-              <p className="text-neutral-400">Speak directly with our lighting engineering team in Kalloor, Kochi.</p>
+              <span className="text-luxe-champagne font-semibold block">
+                Need immediate advice?
+              </span>
+              <p className="text-neutral-400">
+                Speak directly with our lighting engineering team in
+                palarivattom, Kochi.
+              </p>
               <Link
                 to="/contact"
                 onClick={() => {
                   trackInquiryClick({
-                    link_location: 'service_detail_support',
-                    button_text: 'Contact Studio',
-                    destination: '/contact',
+                    link_location: "service_detail_support",
+                    button_text: "Contact Studio",
+                    destination: "/contact",
                   });
                 }}
                 className="text-luxe-gold inline-flex items-center gap-1 font-mono pt-1 hover:underline"
@@ -171,4 +194,3 @@ export default function ServiceDetailPage() {
     </div>
   );
 }
-

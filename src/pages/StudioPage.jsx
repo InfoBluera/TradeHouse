@@ -73,7 +73,7 @@ export default function StudioPage() {
             </span>
           </h1>
           <p className="text-neutral-300 text-sm sm:text-base font-light leading-relaxed">
-            Our upcoming studio in Kalloor, Kochi is designed as an
+            Our upcoming studio in palarivattom, Kochi is designed as an
             architectural laboratory where architects, interior designers, and
             homeowners experience light physically in space.
           </p>
@@ -98,7 +98,7 @@ export default function StudioPage() {
                 </p>
               </div>
               <span className="text-xs font-mono text-emerald-400">
-                Kalloor, Kochi
+                palarivattom, Kochi
               </span>
             </div>
           </div>
@@ -171,7 +171,7 @@ export default function StudioPage() {
               </span>
               <div className="flex items-center gap-3 flex-wrap">
                 <h2 className="font-serif text-3xl text-white">
-                  Kalloor, Kochi
+                  palarivattom, Kochi
                 </h2>
                 <a
                   href={BRAND.mapUrl}
@@ -275,7 +275,7 @@ export default function StudioPage() {
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-300 max-w-md mx-auto font-light leading-relaxed">
                   Thank you, {formData.name || "Valued Client"}. Our lighting
-                  design team in Kalloor, Kochi will contact you shortly to
+                  design team in palarivattom, Kochi will contact you shortly to
                   confirm your private studio consultation time.
                 </p>
                 <button
