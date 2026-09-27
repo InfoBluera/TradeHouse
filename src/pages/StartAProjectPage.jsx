@@ -122,7 +122,7 @@ export default function StartAProjectPage() {
       `*Client:* ${clientDetails.name} (${clientDetails.phone})\n` +
       `*Email:* ${clientDetails.email}\n` +
       `*Brief:* ${clientDetails.message || 'None'}`;
-    return `https://wa.me/919846000000?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/917736636427?text=${encodeURIComponent(text)}`;
   };
 
   return (

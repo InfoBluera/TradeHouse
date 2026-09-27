@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Sparkles, ArrowRight, CheckCircle2, SlidersHorizontal, Eye } from 'lucide-react';
-import { trackInquiryClick } from '../utils/analytics';
+import { ArrowRight, Sparkles } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { trackInquiryClick } from "../utils/analytics";
 
 export default function LightingDiscoveryPage() {
-  const [activeCategory, setActiveCategory] = useState('architectural');
+  const [activeCategory, setActiveCategory] = useState("architectural");
 
   const categories = [
-    { id: 'architectural', name: 'Architectural Lighting', count: '14 Series' },
-    { id: 'decorative', name: 'Decorative & Sculptural', count: '10 Series' },
-    { id: 'outdoor', name: 'Landscape & Facade', count: '8 Series' },
-    { id: 'smart', name: 'Smart & Automation Optics', count: '6 Series' },
+    { id: "architectural", name: "Architectural Lighting", count: "14 Series" },
+    { id: "decorative", name: "Decorative & Sculptural", count: "10 Series" },
+    { id: "outdoor", name: "Landscape & Facade", count: "8 Series" },
+    { id: "smart", name: "Smart & Automation Optics", count: "6 Series" },
   ];
 
   const fixtures = {
@@ -22,8 +22,9 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 98 (R9 > 92)",
         beam: "10° / 24° / 36° / 50°",
         ugr: "UGR < 10 Dark Light",
-        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85",
-        desc: "Deep-recessed dark-light luminaire with matte black anti-glare baffle. Plaster-in bezel disappears into smooth ceilings."
+        image:
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85",
+        desc: "Deep-recessed dark-light luminaire with matte black anti-glare baffle. Plaster-in bezel disappears into smooth ceilings.",
       },
       {
         name: "Matrix 48V Low-Voltage Magnetic Track",
@@ -32,8 +33,9 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 97+",
         beam: "Interchangeable Modules",
         ugr: "UGR < 13",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85",
-        desc: "Ultra-slim 18mm track system supporting tool-free hot-swappable accent spots, linear micro-diffusers, and wall washers."
+        image:
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85",
+        desc: "Ultra-slim 18mm track system supporting tool-free hot-swappable accent spots, linear micro-diffusers, and wall washers.",
       },
       {
         name: "Continuous Contour Cove Profile",
@@ -42,8 +44,9 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 98",
         beam: "120° Asymmetric Diffuse",
         ugr: "Indirect Concealed",
-        image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800&q=85",
-        desc: "Seamless dot-free architectural linear profile for floating false ceilings, shadow gaps, and perimeter cornices."
+        image:
+          "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800&q=85",
+        desc: "Seamless dot-free architectural linear profile for floating false ceilings, shadow gaps, and perimeter cornices.",
       },
       {
         name: "Veneer Asymmetric Wall Grazer",
@@ -52,9 +55,10 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 97+",
         beam: "15° x 45° Oval Graze",
         ugr: "UGR < 11",
-        image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=85",
-        desc: "Precision optical grazer highlighting the rich natural relief of laterite, exposed concrete, and marble feature walls."
-      }
+        image:
+          "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=85",
+        desc: "Precision optical grazer highlighting the rich natural relief of laterite, exposed concrete, and marble feature walls.",
+      },
     ],
     decorative: [
       {
@@ -64,8 +68,9 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 95+",
         beam: "Omnidirectional Ambient",
         ugr: "Diffused Soft",
-        image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=85",
-        desc: "Hand-blown amber and smoke crystal spheres suspended on brushed antique bronze rods for grand double-height stairwell voids."
+        image:
+          "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=85",
+        desc: "Hand-blown amber and smoke crystal spheres suspended on brushed antique bronze rods for grand double-height stairwell voids.",
       },
       {
         name: "Solstice Sculptural Dining Chandelier",
@@ -74,8 +79,9 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 97",
         beam: "Direct & Indirect Dual-Emission",
         ugr: "Low-Glare Lens",
-        image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800&q=85",
-        desc: "Hand-finished satin brass architectural ring with integrated downward dining pinspots and upward ceiling wash."
+        image:
+          "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800&q=85",
+        desc: "Hand-finished satin brass architectural ring with integrated downward dining pinspots and upward ceiling wash.",
       },
       {
         name: "Horizon Minimalist Bedside Sconce",
@@ -84,9 +90,10 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 98",
         beam: "Indirect Halo + 8° Reading Stem",
         ugr: "Zero Bed Glare",
-        image: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=85",
-        desc: "Dual-circuit wall sconce providing a soft ambient halo plus an independently switched micro-beam reading light."
-      }
+        image:
+          "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=85",
+        desc: "Dual-circuit wall sconce providing a soft ambient halo plus an independently switched micro-beam reading light.",
+      },
     ],
     outdoor: [
       {
@@ -96,8 +103,9 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 95",
         beam: "12° / 30° / 60° Adjustable Tilt",
         ugr: "Honeycomb Louver Included",
-        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=85",
-        desc: "Marine-grade 316L stainless steel body built for Kerala monsoons. Upward architectural grazing of facades and columns."
+        image:
+          "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=85",
+        desc: "Marine-grade 316L stainless steel body built for Kerala monsoons. Upward architectural grazing of facades and columns.",
       },
       {
         name: "Verdant Tree & Palm Projector",
@@ -106,8 +114,9 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 97",
         beam: "15° Narrow Tree Spire",
         ugr: "Anti-Glare Snoot",
-        image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=85",
-        desc: "Spike-mounted high-power projector with glare-shielding snoot designed to illuminate canopy foliage without light pollution."
+        image:
+          "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=85",
+        desc: "Spike-mounted high-power projector with glare-shielding snoot designed to illuminate canopy foliage without light pollution.",
       },
       {
         name: "Kyoto Low-Glare Pathway Bollard",
@@ -116,9 +125,10 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 92",
         beam: "180° Downward Asymmetric",
         ugr: "Zero Skyward Spill",
-        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85",
-        desc: "Cast aluminum dark-sky compliant garden bollard casting safe, beautiful pathway illumination without blinding strolling guests."
-      }
+        image:
+          "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85",
+        desc: "Cast aluminum dark-sky compliant garden bollard casting safe, beautiful pathway illumination without blinding strolling guests.",
+      },
     ],
     smart: [
       {
@@ -128,8 +138,9 @@ export default function LightingDiscoveryPage() {
         cri: "CRI 98 (R9 > 94 across all CCTs)",
         beam: "Multi-Optic",
         ugr: "UGR < 10",
-        image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=85",
-        desc: "Microprocessor-controlled dual-chip LED module replicating natural sunlight trajectory from dawn to dusk."
+        image:
+          "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=85",
+        desc: "Microprocessor-controlled dual-chip LED module replicating natural sunlight trajectory from dawn to dusk.",
       },
       {
         name: "Aura Smart Metallic Keypad & Scene Controller",
@@ -138,10 +149,11 @@ export default function LightingDiscoveryPage() {
         cri: "Integrated Status LED",
         beam: "Custom Engraved",
         ugr: "Tactile Glass / Brass",
-        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85",
-        desc: "Solid milled brass and matte black keypads with back-lit laser engravings for one-touch scene activation."
-      }
-    ]
+        image:
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85",
+        desc: "Solid milled brass and matte black keypads with back-lit laser engravings for one-touch scene activation.",
+      },
+    ],
   };
 
   const currentList = fixtures[activeCategory] || fixtures.architectural;
@@ -155,10 +167,15 @@ export default function LightingDiscoveryPage() {
             <Sparkles className="w-3.5 h-3.5" /> Curated Luminaire Gallery
           </div>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light uppercase tracking-tight text-white">
-            Lighting <span className="gold-gradient-text italic font-normal">Discovery</span>
+            Lighting{" "}
+            <span className="gold-gradient-text italic font-normal">
+              Discovery
+            </span>
           </h1>
           <p className="text-neutral-300 text-sm sm:text-base font-light leading-relaxed">
-            Not a retail catalogue, but an architectural gallery of precision luminaires. Hand-selected for exceptional color fidelity (CRI 97+), ultra-low glare (UGR &lt; 11), and tropical climate durability.
+            Not a retail catalogue, but an architectural gallery of precision
+            luminaires. Hand-selected for exceptional color fidelity (CRI 97+),
+            ultra-low glare (UGR &lt; 11), and tropical climate durability.
           </p>
         </div>
 
@@ -170,12 +187,14 @@ export default function LightingDiscoveryPage() {
               onClick={() => setActiveCategory(cat.id)}
               className={`px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all duration-300 whitespace-nowrap font-medium flex items-center gap-2 ${
                 activeCategory === cat.id
-                  ? 'bg-luxe-gold text-obsidian-950 font-bold shadow-md shadow-black/40'
-                  : 'bg-obsidian-900 border border-white/10 text-neutral-300 hover:text-white hover:border-luxe-gold/30'
+                  ? "bg-luxe-gold text-obsidian-950 font-bold shadow-md shadow-black/40"
+                  : "bg-obsidian-900 border border-white/10 text-neutral-300 hover:text-white hover:border-luxe-gold/30"
               }`}
             >
               <span>{cat.name}</span>
-              <span className="text-[10px] opacity-70 font-mono">({cat.count})</span>
+              <span className="text-[10px] opacity-70 font-mono">
+                ({cat.count})
+              </span>
             </button>
           ))}
         </div>
@@ -210,20 +229,30 @@ export default function LightingDiscoveryPage() {
               {/* Photometric Spec Badges */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/10 text-[11px] font-mono">
                 <div className="p-2.5 rounded-xl bg-white/5 border border-white/5">
-                  <span className="text-neutral-400 block text-[9px] uppercase">CRI</span>
+                  <span className="text-neutral-400 block text-[9px] uppercase">
+                    CRI
+                  </span>
                   <span className="text-white font-medium">{fix.cri}</span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-white/5 border border-white/5">
-                  <span className="text-neutral-400 block text-[9px] uppercase">CCT Range</span>
+                  <span className="text-neutral-400 block text-[9px] uppercase">
+                    CCT Range
+                  </span>
                   <span className="text-white font-medium">{fix.cct}</span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-white/5 border border-white/5">
-                  <span className="text-neutral-400 block text-[9px] uppercase">Beam Optics</span>
+                  <span className="text-neutral-400 block text-[9px] uppercase">
+                    Beam Optics
+                  </span>
                   <span className="text-white font-medium">{fix.beam}</span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-white/5 border border-white/5">
-                  <span className="text-neutral-400 block text-[9px] uppercase">Glare Control</span>
-                  <span className="text-emerald-400 font-medium">{fix.ugr}</span>
+                  <span className="text-neutral-400 block text-[9px] uppercase">
+                    Glare Control
+                  </span>
+                  <span className="text-emerald-400 font-medium">
+                    {fix.ugr}
+                  </span>
                 </div>
               </div>
 
@@ -232,10 +261,10 @@ export default function LightingDiscoveryPage() {
                   to="/start-a-project"
                   onClick={() => {
                     trackInquiryClick({
-                      link_location: 'lighting_discovery_fixtures',
-                      button_text: 'Request Specification Sheet',
+                      link_location: "lighting_discovery_fixtures",
+                      button_text: "Request Specification Sheet",
                       fixture_name: fix.name,
-                      destination: '/start-a-project',
+                      destination: "/start-a-project",
                     });
                   }}
                   className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-luxe-gold hover:text-white transition-colors"
@@ -246,7 +275,7 @@ export default function LightingDiscoveryPage() {
                   to="/studio"
                   className="text-[11px] font-mono text-neutral-400 hover:text-luxe-gold transition-colors"
                 >
-                  Test at Kalloor Studio
+                  Test at palarivattomStudio
                 </Link>
               </div>
             </div>
@@ -260,10 +289,11 @@ export default function LightingDiscoveryPage() {
               Live Optical Evaluation
             </span>
             <h3 className="font-serif text-2xl sm:text-3xl text-white">
-              Experience these fixtures at our Kalloor Studio
+              Experience these fixtures at our palarivattomStudio
             </h3>
             <p className="text-xs sm:text-sm text-neutral-300 font-light max-w-xl">
-              Inspect beam angles, test tunable white with your chosen materials, and touch custom metallic switchplates.
+              Inspect beam angles, test tunable white with your chosen
+              materials, and touch custom metallic switchplates.
             </p>
           </div>
           <Link

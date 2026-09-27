@@ -1,4 +1,4 @@
-import { REAL_PROJECTS, PROJECT_CATEGORIES } from './projectsData';
+import { PROJECT_CATEGORIES, REAL_PROJECTS } from "./projectsData";
 
 export const BRAND = {
   name: "TRADE HOUSE",
@@ -110,7 +110,11 @@ export const SERVICES = [
   {
     id: "fixture-specification-supply",
     slug: "fixture-specification-supply",
-    aliases: ["lighting-supply", "architectural-lighting", "decorative-lighting"],
+    aliases: [
+      "lighting-supply",
+      "architectural-lighting",
+      "decorative-lighting",
+    ],
     number: "03",
     category: "Lighting & Electrical Planning",
     categorySlug: "planning",
@@ -137,7 +141,11 @@ export const SERVICES = [
   {
     id: "on-site-electrical-execution",
     slug: "on-site-electrical-execution",
-    aliases: ["electrical-wiring", "electrical-coordination", "wiring-execution"],
+    aliases: [
+      "electrical-wiring",
+      "electrical-coordination",
+      "wiring-execution",
+    ],
     number: "04",
     category: "Lighting Execution & Installation",
     categorySlug: "execution",
@@ -218,8 +226,7 @@ export const SERVICES = [
 ];
 
 export const PROJECTS = REAL_PROJECTS;
-export { REAL_PROJECTS, PROJECT_CATEGORIES };
-
+export { PROJECT_CATEGORIES, REAL_PROJECTS };
 
 export const SMART_SCENES = [
   {
@@ -447,7 +454,7 @@ export const PROCESS_STEPS = [
     step: "04",
     title: "Curated Selection & Mockups",
     phase: "Product Curation",
-    desc: "We curate premium architectural luminaires, optical accessories, and smart automation hardware at our Kalloor studio.",
+    desc: "We curate premium architectural luminaires, optical accessories, and smart automation hardware at our palarivattomstudio.",
     detail:
       "Showroom live mockups, CCT side-by-side comparisons, and finish matching with materials.",
   },

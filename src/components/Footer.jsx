@@ -1,8 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowUpRight, Phone, MapPin, Clock, MessageSquare, ShieldCheck, Sparkles } from 'lucide-react';
-import { BRAND, SERVICES } from '../data/siteData';
-import { trackInquiryClick, trackWhatsAppClick, trackPhoneClick, trackMapClick } from '../utils/analytics';
+import {
+  ArrowUpRight,
+  Clock,
+  MapPin,
+  MessageSquare,
+  Phone,
+  Sparkles,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { BRAND } from "../data/siteData";
+import {
+  trackInquiryClick,
+  trackMapClick,
+  trackPhoneClick,
+  trackWhatsAppClick,
+} from "../utils/analytics";
 
 export default function Footer() {
   return (
@@ -26,16 +37,20 @@ export default function Footer() {
               "We believe great lighting should be felt before it is noticed."
             </p>
             <p className="text-sm text-neutral-400 font-light max-w-lg leading-relaxed">
-              Trade House is an architectural lighting consultancy and luxury experience studio in Kalloor, Kochi. We design, curate, and execute glare-free lighting environments for modern luxury residences, villas, commercial atriums, and hospitality spaces across Kerala.
+              Trade House is an architectural lighting consultancy and luxury
+              experience studio in Kalloor, Kochi. We design, curate, and
+              execute glare-free lighting environments for modern luxury
+              residences, villas, commercial atriums, and hospitality spaces
+              across Kerala.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Link
                 to="/start-a-project"
                 onClick={() => {
                   trackInquiryClick({
-                    link_location: 'footer',
-                    button_text: 'Start Your Project',
-                    destination: '/start-a-project',
+                    link_location: "footer",
+                    button_text: "Start Your Project",
+                    destination: "/start-a-project",
                   });
                 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-semibold uppercase tracking-wider hover:bg-luxe-champagne transition-all shadow-lg shadow-luxe-gold/15"
@@ -48,14 +63,15 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 onClick={() => {
                   trackWhatsAppClick({
-                    link_location: 'footer',
-                    button_text: 'WhatsApp Studio',
-                    destination: 'whatsapp',
+                    link_location: "footer",
+                    button_text: "WhatsApp Studio",
+                    destination: "whatsapp",
                   });
                 }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-neutral-200 hover:text-luxe-gold hover:border-luxe-gold/30 transition-all"
               >
-                <MessageSquare className="w-3.5 h-3.5 text-emerald-400" /> WhatsApp Studio
+                <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />{" "}
+                WhatsApp Studio
               </a>
             </div>
           </div>
@@ -66,13 +82,62 @@ export default function Footer() {
               Navigation
             </h4>
             <ul className="space-y-2.5 text-xs tracking-wider uppercase font-light">
-              <li><Link to="/projects" className="hover:text-luxe-gold transition-colors">Projects</Link></li>
-              <li><Link to="/services" className="hover:text-luxe-gold transition-colors">Services</Link></li>
-              <li><Link to="/lighting" className="hover:text-luxe-gold transition-colors">Lighting Gallery</Link></li>
-              <li><Link to="/smart-lighting" className="hover:text-luxe-gold transition-colors">Smart Automation</Link></li>
-              <li><Link to="/studio" className="hover:text-luxe-gold transition-colors">Kochi Studio</Link></li>
-              <li><Link to="/about" className="hover:text-luxe-gold transition-colors">About Story</Link></li>
-              <li><Link to="/contact" className="hover:text-luxe-gold transition-colors">Contact</Link></li>
+              <li>
+                <Link
+                  to="/projects"
+                  className="hover:text-luxe-gold transition-colors"
+                >
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="hover:text-luxe-gold transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/lighting"
+                  className="hover:text-luxe-gold transition-colors"
+                >
+                  Lighting Gallery
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/smart-lighting"
+                  className="hover:text-luxe-gold transition-colors"
+                >
+                  Smart Automation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/studio"
+                  className="hover:text-luxe-gold transition-colors"
+                >
+                  Kochi Studio
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className="hover:text-luxe-gold transition-colors"
+                >
+                  About Story
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="hover:text-luxe-gold transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -87,9 +152,9 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 onClick={() => {
                   trackMapClick({
-                    link_location: 'footer_address',
-                    button_text: 'View on Google Maps',
-                    destination: 'google_maps',
+                    link_location: "footer_address",
+                    button_text: "View on Google Maps",
+                    destination: "google_maps",
                   });
                 }}
                 className="group flex items-start gap-3 hover:text-luxe-gold transition-colors"
@@ -120,9 +185,9 @@ export default function Footer() {
                   href={`tel:${BRAND.phone}`}
                   onClick={() => {
                     trackPhoneClick({
-                      link_location: 'footer',
+                      link_location: "footer",
                       button_text: BRAND.phone,
-                      destination: 'phone',
+                      destination: "phone",
                     });
                   }}
                   className="hover:text-luxe-gold transition-colors"
@@ -134,10 +199,12 @@ export default function Footer() {
 
             <div className="p-4 rounded-xl bg-obsidian-900/80 border border-white/5 space-y-2 mt-4">
               <p className="text-[11px] text-luxe-champagne flex items-center gap-1.5 font-medium">
-                <Sparkles className="w-3.5 h-3.5 text-luxe-gold" /> Architectural Consultations
+                <Sparkles className="w-3.5 h-3.5 text-luxe-gold" />{" "}
+                Architectural Consultations
               </p>
               <p className="text-[11px] text-neutral-400 leading-relaxed">
-                Book a dedicated 1-on-1 session with our senior lighting designers at our Kalloor experience centre.
+                Book a dedicated 1-on-1 session with our senior lighting
+                designers at our palarivattomexperience centre.
               </p>
             </div>
           </div>
@@ -145,7 +212,10 @@ export default function Footer() {
 
         {/* Bottom Sub-Footer */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-neutral-400 tracking-wider">
-          <p>© {new Date().getFullYear()} TRADE HOUSE. All rights reserved. Architectural Lighting Consultants — Kochi, Kerala.</p>
+          <p>
+            © {new Date().getFullYear()} TRADE HOUSE. All rights reserved.
+            Architectural Lighting Consultants — Kochi, Kerala.
+          </p>
           <div className="flex items-center space-x-6">
             <span>DIALux Certified Design</span>
             <span>•</span>
@@ -157,9 +227,9 @@ export default function Footer() {
               rel="noopener noreferrer"
               onClick={() => {
                 trackMapClick({
-                  link_location: 'footer_bottom',
-                  button_text: 'Studio Location',
-                  destination: 'google_maps',
+                  link_location: "footer_bottom",
+                  button_text: "Studio Location",
+                  destination: "google_maps",
                 });
               }}
               className="hover:text-luxe-gold transition-colors inline-flex items-center gap-1"

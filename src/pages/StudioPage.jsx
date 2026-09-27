@@ -11,10 +11,10 @@ import { useState } from "react";
 import { BRAND } from "../data/siteData";
 import {
   trackInquiryClick,
+  trackInquirySubmit,
   trackMapClick,
   trackPhoneClick,
   trackWhatsAppClick,
-  trackInquirySubmit,
 } from "../utils/analytics";
 
 export default function StudioPage() {
@@ -84,7 +84,7 @@ export default function StudioPage() {
           <div className="lg:col-span-8 rounded-3xl overflow-hidden border border-white/10 h-[450px] relative group shadow-2xl">
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85"
-              alt="Trade House Experience Studio Kalloor Kochi Interior"
+              alt="Trade House Experience Studio palarivattomKochi Interior"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent" />
@@ -170,16 +170,18 @@ export default function StudioPage() {
                 Studio Location
               </span>
               <div className="flex items-center gap-3 flex-wrap">
-                <h2 className="font-serif text-3xl text-white">Kalloor, Kochi</h2>
+                <h2 className="font-serif text-3xl text-white">
+                  Kalloor, Kochi
+                </h2>
                 <a
                   href={BRAND.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {
                     trackMapClick({
-                      link_location: 'studio_header',
-                      button_text: 'Open Google Maps',
-                      destination: 'google_maps',
+                      link_location: "studio_header",
+                      button_text: "Open Google Maps",
+                      destination: "google_maps",
                     });
                   }}
                   className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-luxe-gold hover:bg-luxe-gold/10 hover:border-luxe-gold/40 transition-all"
@@ -188,8 +190,8 @@ export default function StudioPage() {
                 </a>
               </div>
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
-                Conveniently situated in Kalloor with dedicated client parking
-                and private architectural consultation suites.
+                Conveniently situated in palarivattomwith dedicated client
+                parking and private architectural consultation suites.
               </p>
             </div>
 
@@ -200,9 +202,9 @@ export default function StudioPage() {
                 rel="noopener noreferrer"
                 onClick={() => {
                   trackMapClick({
-                    link_location: 'studio_address_card',
-                    button_text: 'View on Google Maps',
-                    destination: 'google_maps',
+                    link_location: "studio_address_card",
+                    button_text: "View on Google Maps",
+                    destination: "google_maps",
                   });
                 }}
                 className="group flex items-start gap-3 hover:text-luxe-gold transition-colors text-left"
@@ -232,9 +234,9 @@ export default function StudioPage() {
                   href={`tel:${BRAND.phone}`}
                   onClick={() => {
                     trackPhoneClick({
-                      link_location: 'studio_contact_card',
+                      link_location: "studio_contact_card",
                       button_text: BRAND.phone,
-                      destination: 'phone',
+                      destination: "phone",
                     });
                   }}
                   className="hover:text-luxe-gold transition-colors"
@@ -250,9 +252,9 @@ export default function StudioPage() {
               rel="noopener noreferrer"
               onClick={() => {
                 trackWhatsAppClick({
-                  link_location: 'studio_whatsapp_card',
-                  button_text: 'WhatsApp Studio Concierge',
-                  destination: 'whatsapp',
+                  link_location: "studio_whatsapp_card",
+                  button_text: "WhatsApp Studio Concierge",
+                  destination: "whatsapp",
                 });
               }}
               className="w-full flex items-center justify-center gap-2 p-4 rounded-full bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 text-xs font-semibold uppercase tracking-wider hover:bg-emerald-500/20 transition-all"
@@ -402,9 +404,9 @@ export default function StudioPage() {
                   type="submit"
                   onClick={() => {
                     trackInquiryClick({
-                      link_location: 'studio_walkthrough_form',
-                      button_text: 'Confirm Studio Walkthrough Request',
-                      destination: 'form',
+                      link_location: "studio_walkthrough_form",
+                      button_text: "Confirm Studio Walkthrough Request",
+                      destination: "form",
                     });
                   }}
                   className="w-full py-4 rounded-full bg-luxe-gold text-obsidian-950 text-xs font-bold uppercase tracking-widest hover:bg-luxe-champagne transition-all shadow-lg shadow-luxe-gold/25 flex items-center justify-center gap-2"

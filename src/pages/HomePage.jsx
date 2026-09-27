@@ -1,28 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Sparkles, 
-  CheckCircle2, 
-  Sliders, 
-  MapPin, 
-  Calendar, 
-  Shield, 
-  Award, 
-  Compass, 
-  Layers, 
-  SlidersHorizontal,
-  ChevronRight,
-  Eye, 
-  Zap, 
-  ArrowUpRight
-} from 'lucide-react';
-import HeroLightAnimation from '../components/HeroLightAnimation';
-import SmartSceneSimulator from '../components/SmartSceneSimulator';
-import SpaceExplorer from '../components/SpaceExplorer';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
-import { SERVICES, PROJECTS, PROCESS_STEPS, TESTIMONIALS, TRUST_METRICS, BRAND } from '../data/siteData';
-import { trackInquiryClick } from '../utils/analytics';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  CheckCircle2,
+  MapPin,
+  Sparkles,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import BeforeAfterSlider from "../components/BeforeAfterSlider";
+import HeroLightAnimation from "../components/HeroLightAnimation";
+import SmartSceneSimulator from "../components/SmartSceneSimulator";
+import SpaceExplorer from "../components/SpaceExplorer";
+import {
+  PROCESS_STEPS,
+  PROJECTS,
+  SERVICES,
+  TESTIMONIALS,
+  TRUST_METRICS,
+} from "../data/siteData";
+import { trackInquiryClick } from "../utils/analytics";
 
 export default function HomePage() {
   return (
@@ -39,11 +34,16 @@ export default function HomePage() {
 
           <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light leading-tight text-white uppercase tracking-wide">
             Light is more than <br />
-            <span className="gold-gradient-text italic font-normal">Illumination.</span>
+            <span className="gold-gradient-text italic font-normal">
+              Illumination.
+            </span>
           </h2>
 
           <p className="text-base sm:text-xl text-neutral-300 font-light max-w-3xl mx-auto leading-relaxed">
-            Trade House designs how a space feels, functions, and breathes. We treat light as an architectural material—sculpting shadows, celebrating textures, and syncing human biological rhythm with the spaces we inhabit.
+            Trade House designs how a space feels, functions, and breathes. We
+            treat light as an architectural material—sculpting shadows,
+            celebrating textures, and syncing human biological rhythm with the
+            spaces we inhabit.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10">
@@ -73,10 +73,17 @@ export default function HomePage() {
                 <Sparkles className="w-3.5 h-3.5" /> Complete Lighting Journey
               </div>
               <h2 className="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-wide">
-                From Planning to <span className="gold-gradient-text italic font-normal">Execution</span>
+                From Planning to{" "}
+                <span className="gold-gradient-text italic font-normal">
+                  Execution
+                </span>
               </h2>
               <p className="text-neutral-300 text-sm sm:text-base max-w-2xl font-light leading-relaxed">
-                Trade House provides a complete end-to-end lighting solution—from architectural lighting design and detailed CAD electrical drawings to curated fixture specification, on-site wiring, laser-precise installation, and smart scene commissioning.
+                Trade House provides a complete end-to-end lighting
+                solution—from architectural lighting design and detailed CAD
+                electrical drawings to curated fixture specification, on-site
+                wiring, laser-precise installation, and smart scene
+                commissioning.
               </p>
             </div>
 
@@ -103,12 +110,20 @@ export default function HomePage() {
                 Lighting &amp; Electrical Planning
               </h3>
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-4">
-                Photometric lux modeling, layered lighting strategies, and millimeter-accurate CAD electrical drawings for flawless coordination with architects and contractors.
+                Photometric lux modeling, layered lighting strategies, and
+                millimeter-accurate CAD electrical drawings for flawless
+                coordination with architects and contractors.
               </p>
               <div className="flex flex-wrap gap-2 text-[11px] font-mono text-neutral-400">
-                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">DIALux Calculations</span>
-                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">CAD Electrical Plans</span>
-                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Circuit &amp; Load Maps</span>
+                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
+                  DIALux Calculations
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
+                  CAD Electrical Plans
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
+                  Circuit &amp; Load Maps
+                </span>
               </div>
             </div>
 
@@ -125,12 +140,20 @@ export default function HomePage() {
                 Lighting Execution &amp; Installation
               </h3>
               <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed mb-4">
-                Hands-on on-site electrical wiring, laser-aligned trimless fixture installation, void chandelier suspension, twilight optical aiming, and smart scene setup.
+                Hands-on on-site electrical wiring, laser-aligned trimless
+                fixture installation, void chandelier suspension, twilight
+                optical aiming, and smart scene setup.
               </p>
               <div className="flex flex-wrap gap-2 text-[11px] font-mono text-neutral-400">
-                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">On-Site Wiring</span>
-                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Laser Level Alignment</span>
-                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Smart Scene Aiming</span>
+                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
+                  On-Site Wiring
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
+                  Laser Level Alignment
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
+                  Smart Scene Aiming
+                </span>
               </div>
             </div>
           </div>
@@ -144,7 +167,7 @@ export default function HomePage() {
                 className="group luxe-card rounded-3xl overflow-hidden flex flex-col justify-between p-8 relative transition-all duration-500 hover:-translate-y-1.5"
               >
                 {/* Background image preview with soft gradient overlay on hover */}
-                <div 
+                <div
                   className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
                   style={{ backgroundImage: `url(${service.image})` }}
                 />
@@ -156,7 +179,9 @@ export default function HomePage() {
                         {service.number}
                       </span>
                       <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-white/10 text-neutral-300 border border-white/10">
-                        {service.categorySlug === 'planning' ? 'Planning & Blueprints' : 'Site Execution'}
+                        {service.categorySlug === "planning"
+                          ? "Planning & Blueprints"
+                          : "Site Execution"}
                       </span>
                     </div>
                     <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 group-hover:text-luxe-gold group-hover:border-luxe-gold/50 transition-colors">
@@ -197,7 +222,8 @@ export default function HomePage() {
                 Signature Projects
               </h2>
               <p className="text-neutral-400 text-sm sm:text-base max-w-xl font-light">
-                Sculptural lighting narratives across Kochi, Kerala, and premier South Indian locations.
+                Sculptural lighting narratives across Kochi, Kerala, and premier
+                South Indian locations.
               </p>
             </div>
 
@@ -225,7 +251,8 @@ export default function HomePage() {
                     {PROJECTS[0].category}
                   </span>
                   <span className="text-xs font-mono text-neutral-300 flex items-center gap-1">
-                    <MapPin className="w-3 h-3 text-luxe-gold" /> {PROJECTS[0].location}
+                    <MapPin className="w-3 h-3 text-luxe-gold" />{" "}
+                    {PROJECTS[0].location}
                   </span>
                 </div>
                 <h3 className="font-serif text-3xl sm:text-4xl text-white font-medium">
@@ -239,7 +266,8 @@ export default function HomePage() {
                     to={`/projects/${PROJECTS[0].slug}`}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-luxe-gold hover:text-obsidian-950 backdrop-blur-md border border-white/20 text-xs uppercase tracking-wider font-semibold text-white transition-all"
                   >
-                    View Project Case Study <ArrowRight className="w-3.5 h-3.5" />
+                    View Project Case Study{" "}
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
@@ -259,7 +287,8 @@ export default function HomePage() {
                     {PROJECTS[1].category}
                   </span>
                   <span className="text-xs font-mono text-neutral-300 flex items-center gap-1">
-                    <MapPin className="w-3 h-3 text-luxe-gold" /> {PROJECTS[1].location}
+                    <MapPin className="w-3 h-3 text-luxe-gold" />{" "}
+                    {PROJECTS[1].location}
                   </span>
                 </div>
                 <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium">
@@ -281,7 +310,10 @@ export default function HomePage() {
 
             {/* Project 3 & 4 Cards */}
             {PROJECTS.slice(2, 4).map((proj) => (
-              <div key={proj.id} className="lg:col-span-6 group relative rounded-3xl overflow-hidden border border-white/10 min-h-[380px] flex flex-col justify-end p-8 shadow-2xl bg-obsidian-900">
+              <div
+                key={proj.id}
+                className="lg:col-span-6 group relative rounded-3xl overflow-hidden border border-white/10 min-h-[380px] flex flex-col justify-end p-8 shadow-2xl bg-obsidian-900"
+              >
                 <div
                   className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-1000"
                   style={{ backgroundImage: `url(${proj.heroImage})` }}
@@ -294,7 +326,8 @@ export default function HomePage() {
                       {proj.category}
                     </span>
                     <span className="text-xs font-mono text-neutral-300 flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-luxe-gold" /> {proj.location}
+                      <MapPin className="w-3 h-3 text-luxe-gold" />{" "}
+                      {proj.location}
                     </span>
                   </div>
                   <h3 className="font-serif text-2xl text-white font-medium">
@@ -335,16 +368,23 @@ export default function HomePage() {
               Flawless Turnkey Execution
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-wide">
-              The Trade House <span className="gold-gradient-text italic font-normal">Method</span>
+              The Trade House{" "}
+              <span className="gold-gradient-text italic font-normal">
+                Method
+              </span>
             </h2>
             <p className="text-neutral-400 text-sm sm:text-base font-light leading-relaxed">
-              We eliminate on-site ambiguity through our rigorous 7-stage architectural lighting lifecycle.
+              We eliminate on-site ambiguity through our rigorous 7-stage
+              architectural lighting lifecycle.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {PROCESS_STEPS.slice(0, 4).map((step) => (
-              <div key={step.step} className="p-8 rounded-3xl bg-obsidian-900/60 border border-white/5 space-y-4 relative group hover:border-luxe-gold/30 transition-all">
+              <div
+                key={step.step}
+                className="p-8 rounded-3xl bg-obsidian-900/60 border border-white/5 space-y-4 relative group hover:border-luxe-gold/30 transition-all"
+              >
                 <span className="font-serif text-3xl text-luxe-gold font-light">
                   {step.step}
                 </span>
@@ -363,7 +403,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
             {PROCESS_STEPS.slice(4, 7).map((step) => (
-              <div key={step.step} className="p-8 rounded-3xl bg-obsidian-900/60 border border-white/5 space-y-4 relative group hover:border-luxe-gold/30 transition-all">
+              <div
+                key={step.step}
+                className="p-8 rounded-3xl bg-obsidian-900/60 border border-white/5 space-y-4 relative group hover:border-luxe-gold/30 transition-all"
+              >
                 <span className="font-serif text-3xl text-luxe-gold font-light">
                   {step.step}
                 </span>
@@ -392,10 +435,15 @@ export default function HomePage() {
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-light text-white uppercase tracking-wide leading-tight">
                 Experience Light <br />
-                <span className="gold-gradient-text italic font-normal">Before You Choose It.</span>
+                <span className="gold-gradient-text italic font-normal">
+                  Before You Choose It.
+                </span>
               </h2>
               <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
-                Step into our architectural lighting laboratory in Kalloor, Kochi. Test beam spreads in our dark simulation studio, evaluate high CRI 98 color rendering on your interior material samples, and explore automated smart scene keypads.
+                Step into our architectural lighting laboratory in Kalloor,
+                Kochi. Test beam spreads in our dark simulation studio, evaluate
+                high CRI 98 color rendering on your interior material samples,
+                and explore automated smart scene keypads.
               </p>
 
               <div className="space-y-3 pt-2">
@@ -409,7 +457,9 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-3 text-xs text-neutral-300">
                   <CheckCircle2 className="w-4 h-4 text-luxe-gold shrink-0" />
-                  <span>Architectural magnetic track &amp; trimless gallery</span>
+                  <span>
+                    Architectural magnetic track &amp; trimless gallery
+                  </span>
                 </div>
               </div>
 
@@ -424,9 +474,9 @@ export default function HomePage() {
                   to="/contact"
                   onClick={() => {
                     trackInquiryClick({
-                      link_location: 'homepage_studio_preview',
-                      button_text: 'Book a Consultation',
-                      destination: '/contact',
+                      link_location: "homepage_studio_preview",
+                      button_text: "Book a Consultation",
+                      destination: "/contact",
                     });
                   }}
                   className="px-6 py-3.5 rounded-full bg-white/5 border border-white/15 text-xs font-medium uppercase tracking-widest text-neutral-200 hover:text-luxe-gold hover:border-luxe-gold/40 transition-all"
@@ -439,7 +489,7 @@ export default function HomePage() {
             <div className="lg:col-span-6 relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-[480px] group">
               <img
                 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-                alt="Trade House Lighting Experience Studio Kalloor Kochi"
+                alt="Trade House Lighting Experience Studio palarivattomKochi"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent" />
@@ -452,7 +502,9 @@ export default function HomePage() {
                     Kalloor, Kochi, Kerala 682017
                   </p>
                 </div>
-                <span className="text-xs font-mono text-emerald-400">Opening Soon</span>
+                <span className="text-xs font-mono text-emerald-400">
+                  Opening Soon
+                </span>
               </div>
             </div>
           </div>
@@ -473,7 +525,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-obsidian-900/70 border border-white/5 space-y-6 flex flex-col justify-between">
+              <div
+                key={idx}
+                className="p-8 rounded-3xl bg-obsidian-900/70 border border-white/5 space-y-6 flex flex-col justify-between"
+              >
                 <p className="text-xs sm:text-sm text-neutral-300 font-light italic leading-relaxed">
                   "{t.quote}"
                 </p>
@@ -494,7 +549,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
       {/* 11: Grand High-Conversion Final CTA */}
       <section className="relative py-32 bg-obsidian-950 border-t border-white/10 overflow-hidden text-center">
         {/* Ambient Radial Spotlight - Subtle, Soft Ivory Warmth */}
@@ -507,11 +561,14 @@ export default function HomePage() {
 
           <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light text-white uppercase tracking-tight leading-tight">
             Ready to change <br />
-            <span className="gold-gradient-text italic font-normal">the way your space feels?</span>
+            <span className="gold-gradient-text italic font-normal">
+              the way your space feels?
+            </span>
           </h2>
 
           <p className="text-base sm:text-lg text-neutral-300 font-light max-w-2xl mx-auto leading-relaxed">
-            Tell us about your space. We'll help you discover what the right light can do for your architecture, mood, and daily life.
+            Tell us about your space. We'll help you discover what the right
+            light can do for your architecture, mood, and daily life.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -519,9 +576,9 @@ export default function HomePage() {
               to="/start-a-project"
               onClick={() => {
                 trackInquiryClick({
-                  link_location: 'homepage_final_cta',
-                  button_text: 'Start Your Project',
-                  destination: '/start-a-project',
+                  link_location: "homepage_final_cta",
+                  button_text: "Start Your Project",
+                  destination: "/start-a-project",
                 });
               }}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-9 py-3.5 rounded-full bg-gradient-to-r from-luxe-gold to-luxe-bronze text-obsidian-950 text-xs font-semibold uppercase tracking-[0.14em] shadow-lg shadow-black/40 hover:brightness-105 active:scale-[0.98] transition-all duration-200"
