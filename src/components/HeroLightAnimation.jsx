@@ -76,7 +76,7 @@ export default function HeroLightAnimation() {
 
         {/* Supporting Editorial Paragraph */}
         <p className="mt-6 text-sm sm:text-base md:text-lg text-neutral-300 font-light max-w-2xl leading-relaxed tracking-wide">
-          Trade House designs how a space looks, feels, and functions through light. Precision architectural fixtures, human-centric smart automation, and turnkey execution in Kalloor, Kochi.
+          Trade House designs how a space looks, feels, and functions through light. Precision architectural fixtures, human-centric smart automation, and turnkey execution in palarivattom, Kochi.
         </p>
 
         {/* Primary & Secondary Call to Actions */}
