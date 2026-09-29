@@ -10,11 +10,15 @@ export default function Header() {
   const location = useLocation();
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const shouldBeScrolled = window.scrollY > 30;
+          setIsScrolled((prev) => (prev !== shouldBeScrolled ? shouldBeScrolled : prev));
+          ticking = false;
+        });
+        ticking = true;
       }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
