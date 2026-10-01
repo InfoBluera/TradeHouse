@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-export default function ProjectFilter({ categories, selectedCategory, onSelectCategory }) {
+const ProjectFilter = memo(function ProjectFilter({ categories, selectedCategory, onSelectCategory }) {
   return (
     <div 
       className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar"
@@ -36,4 +36,6 @@ export default function ProjectFilter({ categories, selectedCategory, onSelectCa
       })}
     </div>
   );
-}
+});
+
+export default ProjectFilter;

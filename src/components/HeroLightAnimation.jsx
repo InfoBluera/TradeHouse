@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, ChevronDown } from 'lucide-react';
 import { trackInquiryClick } from '../utils/analytics';
+import { useLargeScreen } from '../utils/screenDetection';
 
 export default function HeroLightAnimation() {
+  const isLargeTV = useLargeScreen();
   const [lightIntensity, setLightIntensity] = useState(80);
   const [cct, setCct] = useState(2700); // 2700K warm architectural
   const [isPowerOn, setIsPowerOn] = useState(true);
@@ -25,20 +27,25 @@ export default function HeroLightAnimation() {
 
   return (
     <div className="relative min-h-[90vh] sm:min-h-[92vh] flex items-center justify-center overflow-hidden bg-obsidian-950 pt-20 sm:pt-24 pb-12 sm:pb-16">
-      {/* Background Architectural Image Layer */}
-      <img 
-        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
-        alt="Trade House Architectural Lighting Studio Kochi"
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 z-0 w-full h-full object-cover object-center transform scale-105 pointer-events-none"
-        style={{
-          filter: isPowerOn 
-            ? `brightness(${0.25 + (lightIntensity / 100) * 0.65}) contrast(${1.02 + (lightIntensity / 200) * 0.18}) saturate(${0.9 + (lightIntensity / 100) * 0.2})`
-            : 'brightness(0.08) contrast(1.1) grayscale(0.8)',
-          transition: 'filter 0.5s ease',
-        }}
-      />
+      {/* Background Architectural Image Layer - Omitted completely on Large TV / 4K mode to prevent network fetch */}
+      {!isLargeTV ? (
+        <img 
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+          alt="Trade House Architectural Lighting Studio Kochi"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 z-0 w-full h-full object-cover object-center transform scale-105 pointer-events-none"
+          style={{
+            filter: isPowerOn 
+              ? `brightness(${0.25 + (lightIntensity / 100) * 0.65}) contrast(${1.02 + (lightIntensity / 200) * 0.18}) saturate(${0.9 + (lightIntensity / 100) * 0.2})`
+              : 'brightness(0.08) contrast(1.1) grayscale(0.8)',
+            transition: 'filter 0.5s ease',
+          }}
+        />
+      ) : (
+        /* Dedicated solid black background for large screens / TVs */
+        <div className="absolute inset-0 z-0 bg-[#000000] pointer-events-none" />
+      )}
 
       {/* Dark Architectural Vignette & Gradient Overlays */}
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-obsidian-950 via-obsidian-950/65 to-obsidian-950/80 pointer-events-none" />

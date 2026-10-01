@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react';
 
-export default function ProjectCard({ project, featured = false, index = 0 }) {
+function ProjectCard({ project, featured = false, index = 0 }) {
   if (featured) {
     return (
       <div className="group relative rounded-3xl overflow-hidden border border-white/10 hover:border-luxe-gold/40 transition-all duration-700 bg-obsidian-900 shadow-2xl flex flex-col lg:flex-row min-h-[520px]">
@@ -12,6 +12,7 @@ export default function ProjectCard({ project, featured = false, index = 0 }) {
             src={project.heroImage}
             alt={project.gallery?.[0]?.alt || project.title}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-obsidian-950" />
@@ -94,6 +95,7 @@ export default function ProjectCard({ project, featured = false, index = 0 }) {
           src={project.heroImage}
           alt={project.gallery?.[0]?.alt || project.title}
           loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent" />
@@ -155,3 +157,5 @@ export default function ProjectCard({ project, featured = false, index = 0 }) {
     </article>
   );
 }
+
+export default memo(ProjectCard);

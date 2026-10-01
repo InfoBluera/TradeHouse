@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { REAL_PROJECTS, PROJECT_CATEGORIES } from '../data/projectsData';
 import ProjectCard from '../components/projects/ProjectCard';
@@ -9,6 +9,10 @@ import { trackInquiryClick } from '../utils/analytics';
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSelectCategory = useCallback((category) => {
+    setSelectedCategory(category);
+  }, []);
 
   const filteredProjects = useMemo(() => {
     return REAL_PROJECTS.filter((proj) => {
@@ -60,7 +64,7 @@ export default function ProjectsPage() {
           <ProjectFilter
             categories={PROJECT_CATEGORIES}
             selectedCategory={selectedCategory}
-            onSelectCategory={setSelectedCategory}
+            onSelectCategory={handleSelectCategory}
           />
 
           <div className="relative w-full md:w-80 shrink-0">
