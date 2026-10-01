@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,18 +11,18 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppFloatingCTA from './components/WhatsAppFloatingCTA';
 
-// Pages
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ServicesPage from './pages/ServicesPage';
-import ServiceDetailPage from './pages/ServiceDetailPage';
-import ProjectsPage from './pages/ProjectsPage';
-import ProjectDetailPage from './pages/ProjectDetailPage';
-import LightingDiscoveryPage from './pages/LightingDiscoveryPage';
-import SmartLightingPage from './pages/SmartLightingPage';
-import StudioPage from './pages/StudioPage';
-import ContactPage from './pages/ContactPage';
-import StartAProjectPage from './pages/StartAProjectPage';
+// Route-level code splitting
+const HomePage = lazy(() => import('./pages/HomePage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
+const LightingDiscoveryPage = lazy(() => import('./pages/LightingDiscoveryPage'));
+const SmartLightingPage = lazy(() => import('./pages/SmartLightingPage'));
+const StudioPage = lazy(() => import('./pages/StudioPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const StartAProjectPage = lazy(() => import('./pages/StartAProjectPage'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -71,39 +71,41 @@ export default function App() {
         <Header />
 
         <main className="flex-grow">
-          <Routes>
-            {/* Home */}
-            <Route path="/" element={<HomePage />} />
+          <Suspense fallback={<div className="min-h-screen bg-obsidian-950" />}>
+            <Routes>
+              {/* Home */}
+              <Route path="/" element={<HomePage />} />
 
-            {/* About */}
-            <Route path="/about" element={<AboutPage />} />
+              {/* About */}
+              <Route path="/about" element={<AboutPage />} />
 
-            {/* Services */}
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/:slug" element={<ServiceDetailPage />} />
+              {/* Services */}
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/services/:slug" element={<ServiceDetailPage />} />
 
-            {/* Projects */}
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/:id" element={<ProjectDetailPage />} />
+              {/* Projects */}
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/:id" element={<ProjectDetailPage />} />
 
-            {/* Lighting */}
-            <Route path="/lighting" element={<LightingDiscoveryPage />} />
+              {/* Lighting */}
+              <Route path="/lighting" element={<LightingDiscoveryPage />} />
 
-            {/* Smart Lighting */}
-            <Route path="/smart-lighting" element={<SmartLightingPage />} />
+              {/* Smart Lighting */}
+              <Route path="/smart-lighting" element={<SmartLightingPage />} />
 
-            {/* Studio */}
-            <Route path="/studio" element={<StudioPage />} />
+              {/* Studio */}
+              <Route path="/studio" element={<StudioPage />} />
 
-            {/* Contact */}
-            <Route path="/contact" element={<ContactPage />} />
+              {/* Contact */}
+              <Route path="/contact" element={<ContactPage />} />
 
-            {/* Start a Project */}
-            <Route path="/start-a-project" element={<StartAProjectPage />} />
+              {/* Start a Project */}
+              <Route path="/start-a-project" element={<StartAProjectPage />} />
 
-            {/* 404 */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              {/* 404 */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </main>
 
         <Footer />
