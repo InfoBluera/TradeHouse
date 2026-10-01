@@ -1,0 +1,108 @@
+/* ==========================================================================
+   TRADE HOUSE LIGHTING — LARGE-SCREEN TV PERFORMANCE OPTIMIZATION LAYER
+   ==========================================================================
+   Target Display: >= 1920px Viewports (40", 50", 55", 60", 65"+ 4K/FHD Smart TVs)
+   
+   CRITICAL ARCHITECTURAL GUARANTEE:
+   - Mobile (<768px): UNCHANGED
+   - Tablet (768px - 1024px): UNCHANGED
+   - Laptop (1024px - 1440px): UNCHANGED
+   - Normal Desktop (<1920px): UNCHANGED
+   - Large TV (>=1920px): High-Performance Rendering, Low GPU Fill-Rate & Zero Lag
+   ========================================================================== */
+
+@media screen and (min-width: 1920px) {
+
+  /* --------------------------------------------------------------------------
+     1. GLOBAL BACKDROP-FILTER REPLACEMENT
+     Disables dynamic multi-pass Gaussian backdrop blurs on large TV viewports.
+     Replaces them with deep, opaque architectural surfaces preserving the
+     TradeHouse luxury dark design identity with high contrast and zero GPU drag.
+     -------------------------------------------------------------------------- */
+  .luxe-card,
+  [class*="backdrop-blur"],
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl,
+  .backdrop-blur-3xl {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Refined high-contrast architectural card backing */
+  .luxe-card {
+    background: rgba(16, 18, 22, 0.94) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 30px -10px rgba(0, 0, 0, 0.75) !important;
+  }
+
+  /* Fixed Navigation Header when scrolled */
+  header.fixed {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  header.fixed.bg-obsidian-950\/90,
+  header.fixed.bg-obsidian-950\/95,
+  header.fixed.bg-obsidian-950\/85 {
+    background-color: rgba(7, 8, 10, 0.97) !important;
+  }
+
+  /* Floating WhatsApp Studio Concierge CTA */
+  .fixed.bottom-6.right-6 {
+    background-color: rgba(16, 18, 22, 0.96) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* --------------------------------------------------------------------------
+     2. BLUR RADIUS REFINEMENT (Prevents Rasterizer Saturation)
+     Clamping large 120px+ blur filters to clean, lightweight values.
+     -------------------------------------------------------------------------- */
+  .blur-\[120px\],
+  .blur-3xl,
+  .blur-2xl {
+    filter: none !important;
+  }
+
+  /* Hero spotlight ambient glow: capped to lightweight 20px blur */
+  .blur-\[120px\] {
+    filter: blur(20px) !important;
+  }
+
+  /* CCT Drop-Shadow replacement with GPU-friendly box shadows */
+  .cct-1800,
+  .cct-2700,
+  .cct-3000,
+  .cct-4000,
+  .cct-6500 {
+    filter: none !important;
+  }
+  .cct-1800 { box-shadow: 0 0 16px rgba(255, 140, 50, 0.22); }
+  .cct-2700 { box-shadow: 0 0 16px rgba(245, 205, 130, 0.22); }
+  .cct-3000 { box-shadow: 0 0 16px rgba(245, 225, 170, 0.20); }
+  .cct-4000 { box-shadow: 0 0 16px rgba(235, 235, 245, 0.18); }
+  .cct-6500 { box-shadow: 0 0 16px rgba(190, 220, 255, 0.16); }
+
+  /* --------------------------------------------------------------------------
+     3. INFINITE ANIMATION THROTTLING FOR LARGE VIEWPORTS
+     Reduces continuous GPU shader load during scrolling and static viewing.
+     -------------------------------------------------------------------------- */
+  .beam-line::after {
+    animation-duration: 7s !important;
+  }
+
+  .animate-pulse-slow {
+    animation-duration: 6s !important;
+  }
+
+  .animate-glow-breathe {
+    animation-duration: 9s !important;
+  }
+
+  .animate-beam-sweep {
+    animation-duration: 12s !important;
+  }
+}

@@ -5,11 +5,14 @@ import {
   MapPin,
   Sparkles,
 } from "lucide-react";
+import React, { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
-import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import HeroLightAnimation from "../components/HeroLightAnimation";
-import SmartSceneSimulator from "../components/SmartSceneSimulator";
-import SpaceExplorer from "../components/SpaceExplorer";
+
+// Below-the-fold heavy interactive components code-split for faster initial LCP
+const BeforeAfterSlider = lazy(() => import("../components/BeforeAfterSlider"));
+const SmartSceneSimulator = lazy(() => import("../components/SmartSceneSimulator"));
+const SpaceExplorer = lazy(() => import("../components/SpaceExplorer"));
 import {
   PROCESS_STEPS,
   PROJECTS,
@@ -352,13 +355,19 @@ export default function HomePage() {
       </section>
 
       {/* 05: Before & After Layered Light Comparison */}
-      <BeforeAfterSlider />
+      <Suspense fallback={<div className="min-h-[400px] bg-obsidian-950" />}>
+        <BeforeAfterSlider />
+      </Suspense>
 
       {/* 06: Interactive Smart Scene Simulator */}
-      <SmartSceneSimulator />
+      <Suspense fallback={<div className="min-h-[500px] bg-obsidian-950" />}>
+        <SmartSceneSimulator />
+      </Suspense>
 
       {/* 07: Space-by-Space Lighting Explorer */}
-      <SpaceExplorer />
+      <Suspense fallback={<div className="min-h-[400px] bg-obsidian-950" />}>
+        <SpaceExplorer />
+      </Suspense>
 
       {/* 08: 7-Stage Turnkey Process Section */}
       <section className="relative py-28 bg-obsidian-950 border-t border-b border-white/10 overflow-hidden">

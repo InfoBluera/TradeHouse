@@ -26,13 +26,17 @@ export default function HeroLightAnimation() {
   return (
     <div className="relative min-h-[90vh] sm:min-h-[92vh] flex items-center justify-center overflow-hidden bg-obsidian-950 pt-20 sm:pt-24 pb-12 sm:pb-16">
       {/* Background Architectural Image Layer */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-1000 transform scale-105"
+      <img 
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+        alt="Trade House Architectural Lighting Studio Kochi"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 z-0 w-full h-full object-cover object-center transform scale-105 pointer-events-none"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=90')`,
           filter: isPowerOn 
             ? `brightness(${0.25 + (lightIntensity / 100) * 0.65}) contrast(${1.02 + (lightIntensity / 200) * 0.18}) saturate(${0.9 + (lightIntensity / 100) * 0.2})`
             : 'brightness(0.08) contrast(1.1) grayscale(0.8)',
+          transition: 'filter 0.5s ease',
         }}
       />
 
