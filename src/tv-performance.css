@@ -61,15 +61,21 @@
      2. BLUR RADIUS REFINEMENT (Prevents Rasterizer Saturation)
      Clamping large 120px+ blur filters to clean, lightweight values.
      -------------------------------------------------------------------------- */
-  .blur-\[120px\],
   .blur-3xl,
   .blur-2xl {
     filter: none !important;
   }
 
-  /* Hero spotlight ambient glow: capped to lightweight 20px blur */
+  /* Hero spotlight ambient glow: Restore soft white/gray central glow on TV viewports (>=1920px) using hardware-accelerated radial gradient */
+  .hero-ambient-glow,
   .blur-\[120px\] {
-    filter: blur(20px) !important;
+    filter: none !important;
+    background: radial-gradient(
+      ellipse at 50% 35%,
+      rgba(var(--glow-cct-color, 250, 242, 225), calc(0.28 * var(--glow-intensity, 0.8))),
+      rgba(var(--glow-cct-color, 250, 242, 225), calc(0.12 * var(--glow-intensity, 0.8))) 45%,
+      transparent 75%
+    ) !important;
   }
 
   /* CCT Drop-Shadow replacement with GPU-friendly box shadows */

@@ -46,10 +46,12 @@ export default function HeroLightAnimation() {
 
       {/* Dynamic Ambient Spotlight Glow - Refined & Subtle */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[75vw] h-[75vh] rounded-full pointer-events-none z-10 blur-[120px] transition-all duration-700"
+        className="hero-ambient-glow absolute top-0 left-1/2 -translate-x-1/2 w-[75vw] h-[75vh] rounded-full pointer-events-none z-10 blur-[120px] transition-all duration-700"
         style={{
           background: getGlowColor(),
           transform: `translate(-50%, -20%) scale(${0.85 + (lightIntensity / 100) * 0.4})`,
+          '--glow-cct-color': !isPowerOn ? '0, 0, 0' : cct <= 2400 ? '255, 200, 140' : cct <= 3000 ? '250, 242, 225' : cct <= 4000 ? '242, 240, 235' : '225, 235, 250',
+          '--glow-intensity': !isPowerOn ? '0' : (lightIntensity / 100).toFixed(2),
         }}
       />
 
